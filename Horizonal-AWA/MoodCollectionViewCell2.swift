@@ -17,9 +17,8 @@ class MoodCollectionViewCell2: UICollectionViewCell {
     
     var cyberLine = CyberLine()
     
-    var title = "" {
+    var mood = Mood.happy {
         didSet {
-            // 初期化
             contentView.subviews.forEach { $0.removeFromSuperview() }
             
             // 順番に注意
@@ -30,23 +29,7 @@ class MoodCollectionViewCell2: UICollectionViewCell {
     }
     
     func set(mood: Mood) {
-        title = mood.uppercaseString
-    }
-    
-    private func makeTitleLabel() -> UILabel {
-        let titleLabel = UILabel(frame: CGRect(origin: CGPoint(x: cyberLine.frame.origin.x, y: 0),
-                                           size: .zero))
-        titleLabel.text = title
-        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
-        titleLabel.textColor = .white
-        titleLabel.sizeToFit()
-        titleLabel.frame.origin.y = cyberLine.frame.origin.y - titleLabel.bounds.height + 2
-        return titleLabel
-    }
-    
-    private func initTitleLabel() {
-        titleLabel = makeTitleLabel()
-        contentView.addSubview(titleLabel)
+        self.mood = mood
     }
     
     private func initMoodImageView() {
@@ -59,8 +42,8 @@ class MoodCollectionViewCell2: UICollectionViewCell {
         moodImageView.layer.cornerRadius = moodImageView.bounds.width/2
         moodImageView.layer.borderWidth = 1
         moodImageView.layer.borderColor = UIColor.white.cgColor
-        moodImageView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-
+        moodImageView.image = mood.image
+        
         contentView.addSubview(moodImageView)
     }
     
@@ -81,6 +64,22 @@ class MoodCollectionViewCell2: UICollectionViewCell {
     
     private func titleLabelWidth() -> CGFloat {
         return makeTitleLabel().bounds.width
+    }
+    
+    private func makeTitleLabel() -> UILabel {
+        let titleLabel = UILabel(frame: CGRect(origin: CGPoint(x: cyberLine.frame.origin.x, y: 0),
+                                           size: .zero))
+        titleLabel.text = mood.uppercaseString
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
+        titleLabel.textColor = .white
+        titleLabel.sizeToFit()
+        titleLabel.frame.origin.y = cyberLine.frame.origin.y - titleLabel.bounds.height + 2
+        return titleLabel
+    }
+    
+    private func initTitleLabel() {
+        titleLabel = makeTitleLabel()
+        contentView.addSubview(titleLabel)
     }
 }
 

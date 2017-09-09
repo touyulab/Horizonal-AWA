@@ -45,4 +45,8 @@ enum Mood: String {
     var uppercaseString: String {
         return self.rawValue.uppercased()
     }
+    
+    var image: UIImage {
+        return #imageLiteral(resourceName: "happy")
+    }
 }
