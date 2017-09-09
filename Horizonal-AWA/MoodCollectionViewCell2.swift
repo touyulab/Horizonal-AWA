@@ -13,6 +13,7 @@ class MoodCollectionViewCell2: UICollectionViewCell {
     var line1 = UIView()
     var line2 = UIView()
     var titleLabel = UILabel()
+    var moodImageScrollView = UIScrollView()
     var moodImageView = UIImageView()
     
     var cyberLine = CyberLine()
@@ -22,7 +23,7 @@ class MoodCollectionViewCell2: UICollectionViewCell {
             contentView.subviews.forEach { $0.removeFromSuperview() }
             
             // 順番に注意
-            initMoodImageView()
+            initmoodImageScrollView()
             initBezierLine()
             initTitleLabel()
         }
@@ -32,30 +33,42 @@ class MoodCollectionViewCell2: UICollectionViewCell {
         self.mood = mood
     }
     
-    private func initMoodImageView() {
+    private func initmoodImageScrollView() {
         let size = CGSize(width: 80, height: 80)
         let x = contentView.bounds.width - size.width
         let y = contentView.bounds.height - size.height
-        moodImageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y),
-                                                  size: size))
-        moodImageView.layer.masksToBounds = true
-        moodImageView.layer.cornerRadius = moodImageView.bounds.width/2
-        moodImageView.layer.borderWidth = 1
-        moodImageView.layer.borderColor = UIColor.white.cgColor
-        moodImageView.image = mood.image
+//        moodImageScrollView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y),
+//                                                  size: size))
+//        moodImageScrollView.layer.masksToBounds = true
+//        moodImageScrollView.layer.cornerRadius = moodImageScrollView.bounds.width/2
+//        moodImageScrollView.layer.borderWidth = 1
+//        moodImageScrollView.layer.borderColor = UIColor.white.cgColor
+//        moodImageScrollView.image = mood.image
         
-        contentView.addSubview(moodImageView)
+        moodImageScrollView = UIScrollView(frame: CGRect(origin: CGPoint(x: x, y: y), size: size))
+        moodImageScrollView.layer.masksToBounds = true
+        moodImageScrollView.layer.cornerRadius = moodImageScrollView.bounds.width/2
+        moodImageScrollView.layer.borderWidth = 1
+        moodImageScrollView.layer.borderColor = UIColor.white.cgColor
+        moodImageScrollView.contentSize = CGSize(width: 120, height: 120)
+        moodImageScrollView.isScrollEnabled = false
+        
+        moodImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0),
+                                                  size: CGSize(width: 120, height: 120)))
+        moodImageView.image = mood.image
+        moodImageScrollView.addSubview(moodImageView)
+        contentView.addSubview(moodImageScrollView)
     }
     
     private func initBezierLine() {
         let angle = radian(degree: 45)
-        let moodImageViewRadius = moodImageView.bounds.width/2
+        let moodImageScrollViewRadius = moodImageScrollView.bounds.width/2
         let width = titleLabelWidth()+24*sin(angle)
         let height = 24*sin(angle)
         let size = CGSize(width: width,
                           height: height)
-        let x = moodImageView.center.x - moodImageViewRadius*cos(angle) - width
-        let y = moodImageView.center.y - moodImageViewRadius*sin(angle) - height
+        let x = moodImageScrollView.center.x - moodImageScrollViewRadius*cos(angle) - width
+        let y = moodImageScrollView.center.y - moodImageScrollViewRadius*sin(angle) - height
         let origin = CGPoint(x: x, y: y)
         cyberLine = CyberLine(frame: CGRect(origin: origin,
                                             size: size))

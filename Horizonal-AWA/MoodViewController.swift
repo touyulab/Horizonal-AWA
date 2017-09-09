@@ -68,9 +68,14 @@ extension MoodViewController: UICollectionViewDataSource {
 }
 
 extension MoodViewController: UICollectionViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print(collectionView.contentOffset)
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        collectionView.visibleCells
+            .flatMap { $0 as? MoodCollectionViewCell2 }
+            .forEach { cell in
+                cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/5
+                cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-scrollView.contentOffset.y)/6 - 4
+            }
+    }
 //
 //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //        cell.frame
