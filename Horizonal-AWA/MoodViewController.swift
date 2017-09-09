@@ -14,8 +14,9 @@ class MoodViewController: UIViewController {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
-            let nib = UINib(nibName: "MoodCollectionViewCell", bundle: nil)
-            collectionView.register(nib, forCellWithReuseIdentifier: "MoodCollectionViewCell")
+//            let nib = UINib(nibName: "MoodCollectionViewCell", bundle: nil)
+//            collectionView.register(nib, forCellWithReuseIdentifier: "MoodCollectionViewCell")
+            collectionView.register(MoodCollectionViewCell2.self, forCellWithReuseIdentifier: "MoodCollectionViewCell2")
         }
     }
 
@@ -30,6 +31,10 @@ class MoodViewController: UIViewController {
         
         initCollectionView()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     private func initCollectionView() {
         let size = CGSize(width: 400, height: view.bounds.height)
@@ -38,15 +43,11 @@ class MoodViewController: UIViewController {
         collectionView = UICollectionView(frame: frame, collectionViewLayout: MoodCollectionViewLayout())
         collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
         // 無限スクロールのために真ん中からスタートさせる
-        collectionView.contentOffset.y = 50092
+        collectionView.contentOffset.y = 49942
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
         view.addSubview(collectionView)
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
 
 extension MoodViewController: UICollectionViewDataSource {
@@ -59,44 +60,23 @@ extension MoodViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell", for: indexPath) as! MoodCollectionViewCell
-        cell.set(row: indexPath.row%12)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell2", for: indexPath) as! MoodCollectionViewCell2
+        let mood = Mood.list[indexPath.row%Mood.number]
+        cell.set(mood: mood)
         return cell
-    }
-    
-    private func animateCell(_ cell: UITableViewCell) {
-        
     }
 }
 
 extension MoodViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(collectionView.contentOffset)
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        print(collectionView.contentOffset)
+//    }
 //
 //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //        cell.frame
 //    }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-    }
-}
-
-extension MoodViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 142, height: 112)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 80, bottom: 0, right: 80)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(indexPath.item)
 //    }
 }

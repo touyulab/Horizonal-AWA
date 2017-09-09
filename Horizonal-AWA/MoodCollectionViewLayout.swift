@@ -21,7 +21,6 @@ class MoodCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
 class MoodCollectionViewLayout: UICollectionViewLayout {
     
     private var layoutData = [MoodCollectionViewLayoutAttributes]()
-    private var itemSize = CGSize(width: 140, height: 110)
     private var radius: CGFloat = 300
     private var angle: CGFloat {
         return .pi
@@ -35,7 +34,8 @@ class MoodCollectionViewLayout: UICollectionViewLayout {
         for i in 0 ..< collectionView!.numberOfItems(inSection: 0) {
             let indexPath = IndexPath(item: i, section: 0)
             let attributes = MoodCollectionViewLayoutAttributes(forCellWith: indexPath)
-            attributes.size = itemSize
+            let mood = Mood.list[i%Mood.number]
+            attributes.size = mood.imageSize
             let contentOffsetY = collectionView!.contentOffset.y
             // 円の中心
             attributes.center = CGPoint(x: collectionView!.bounds.width,
