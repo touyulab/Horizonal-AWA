@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,27 +39,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-re-LbV" customClass="GeminiCollectionView" customModule="Gemini">
-                                <rect key="frame" x="247" y="0.0" width="420" height="375"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="420" id="2gk-Cf-HYL"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C1A-r8-beP">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="VFE-re-LbV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="XEm-Wd-C7G"/>
-                            <constraint firstAttribute="trailing" secondItem="VFE-re-LbV" secondAttribute="trailing" id="dit-Gs-7EZ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="VFE-re-LbV" secondAttribute="bottom" id="hnM-Fp-yTr"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sRH-bE-Yb7">
                         <barButtonItem key="leftBarButtonItem" image="AWA-Logo" id="8uQ-if-PIb">
@@ -68,9 +48,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="collectionView" destination="VFE-re-LbV" id="9FD-Ip-IPK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

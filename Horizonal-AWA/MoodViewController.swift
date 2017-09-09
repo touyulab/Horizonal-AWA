@@ -7,61 +7,39 @@
 //
 
 import UIKit
-import Gemini
-
-class TestCollectionViewLayout: UICollectionViewLayout {
-    
-    private var layoutData = [UICollectionViewLayoutAttributes]()
-    
-    override func prepare() {
-        super.prepare()
-        
-        for i in 0 ..< collectionView!.numberOfItems(inSection: 0) {
-            let frame = CGRect(x: i*100, y: i*100, width: 140, height: 110)
-            let indexPath = IndexPath(item: i, section: 0)
-            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            attributes.frame = frame
-            layoutData.append(attributes)
-        }
-    }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return layoutData
-    }
-    
-    override var collectionViewContentSize: CGSize {
-        let height = CGFloat(110 * collectionView!.numberOfItems(inSection: 0))
-        return CGSize(width: collectionView!.bounds.width, height: height)
-    }
-}
 
 class MoodViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: GeminiCollectionView! {
+    fileprivate var collectionView: UICollectionView! {
         didSet {
-//            collectionView.collectionViewLayout = TestCollectionViewLayout()
             collectionView.dataSource = self
             collectionView.delegate = self
             let nib = UINib(nibName: "MoodCollectionViewCell", bundle: nil)
             collectionView.register(nib, forCellWithReuseIdentifier: "MoodCollectionViewCell")
-            
-            collectionView.gemini
-                .circleRotationAnimation()
-                .radius(300)
-                .rotateDirection(.clockwise)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        collectionView.transform = collectionView.transform.rotated(by: 45)
+        initCollectionView()
+    }
+    
+    private func initCollectionView() {
+        let size = CGSize(width: 400, height: view.bounds.height)
+        let point = CGPoint(x: view.bounds.width-size.width, y: 0)
+        let frame = CGRect(origin: point, size: size)
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: MoodCollectionViewLayout())
+        collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        // 無限スクロールのために真ん中からスタートさせる
+        collectionView.contentOffset.y = 50092
+        view.addSubview(collectionView)
     }
     
 
@@ -77,42 +55,48 @@ extension MoodViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell", for: indexPath) as! MoodCollectionViewCell
-        self.collectionView.animateCell(cell)
+        cell.set(row: indexPath.row%12)
         return cell
+    }
+    
+    private func animateCell(_ cell: UITableViewCell) {
+        
     }
 }
 
 extension MoodViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        collectionView.animateVisibleCells()
+        print(collectionView.contentOffset)
     }
+//
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        cell.frame
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? GeminiCell {
-            self.collectionView.animateCell(cell)
-        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
     }
 }
 
 extension MoodViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 142, height: 112)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 80, bottom: 0, right: 80)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 142, height: 112)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 80, bottom: 0, right: 80)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
+//    }
 }

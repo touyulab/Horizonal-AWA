@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */; };
+		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1C5FEE61F629362001D4361 /* Gemini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C5FEE51F629362001D4361 /* Gemini.framework */; };
 		D1C5FEE91F629A04001D4361 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5FEE81F629A04001D4361 /* MoodCollectionViewCell.swift */; };
 		D1C5FEEB1F629A1C001D4361 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C5FEEA1F629A1C001D4361 /* MoodCollectionViewCell.xib */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewLayout.swift; sourceTree = "<group>"; };
+		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1C5FEE81F629A04001D4361 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1C5FEEA1F629A1C001D4361 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -83,6 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D15942BC1F63D08100B494F1 /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				D1E130611F611A79006886A4 /* MoodNavigationController.swift */,
+				D1E130311F602728006886A4 /* MoodViewController.swift */,
+				D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */,
+				D1C5FEE81F629A04001D4361 /* MoodCollectionViewCell.swift */,
+				D1C5FEEA1F629A1C001D4361 /* MoodCollectionViewCell.xib */,
+			);
+			name = Mood;
+			sourceTree = "<group>";
+		};
 		D1C5FEE41F629362001D4361 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,10 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				D1E1302F1F602728006886A4 /* AppDelegate.swift */,
-				D1E130611F611A79006886A4 /* MoodNavigationController.swift */,
-				D1E130311F602728006886A4 /* MoodViewController.swift */,
-				D1C5FEE81F629A04001D4361 /* MoodCollectionViewCell.swift */,
-				D1C5FEEA1F629A1C001D4361 /* MoodCollectionViewCell.xib */,
+				D1AE539B1F63AB36002A52AA /* Utility.swift */,
+				D15942BC1F63D08100B494F1 /* Mood */,
 				D1E130331F602728006886A4 /* Main.storyboard */,
 				D1E130361F602728006886A4 /* Assets.xcassets */,
 				D1E130381F602728006886A4 /* LaunchScreen.storyboard */,
@@ -302,8 +316,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */,
 				D1E130321F602728006886A4 /* MoodViewController.swift in Sources */,
 				D1C5FEE91F629A04001D4361 /* MoodCollectionViewCell.swift in Sources */,
+				D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */,
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,
 				D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */,
 			);
