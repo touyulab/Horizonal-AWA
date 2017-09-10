@@ -43,8 +43,8 @@ class MoodViewController: UIViewController {
         collectionView = UICollectionView(frame: frame, collectionViewLayout: MoodCollectionViewLayout())
         collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
         // 無限スクロールのために真ん中からスタートさせる
-//        collectionView.contentOffset.y = 49942
-        collectionView.contentInset.top = 100
+        collectionView.contentOffset.y = 49942
+//        collectionView.contentInset.top = 100
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         view.addSubview(collectionView)
@@ -57,23 +57,27 @@ extension MoodViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell", for: indexPath) as! MoodCollectionViewCell
-        let mood = moodList[indexPath.row%12]
-//        rotateMoodList()
+        
+        let mood = moodList[indexPath.item%12]
         cell.set(mood: mood)
         // TODO: 根本的に修正する必要あり
         cell.alpha = 0
         return cell
     }
     
-    private func rotateMoodList() {
+    private func forwardRotateMoodList() {
         let firstItem = moodList[0]
         moodList.remove(at: 0)
         moodList.append(firstItem)
+    }
+    
+    private func backwardRotateMoodList() {
+        
     }
 }
 

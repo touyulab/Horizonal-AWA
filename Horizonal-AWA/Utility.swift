@@ -38,3 +38,46 @@ extension CALayer {
         self.position = position
     }
 }
+
+extension Array {
+    enum RotateDirection {
+        case forward
+        case backward
+    }
+    
+    func rotate(direction: RotateDirection) ->  [Element] {
+        var array = self
+        switch direction {
+        case .forward:
+            guard let firstItem = first else {
+                return array
+            }
+            array.remove(at: 0)
+            array.append(firstItem)
+        case .backward:
+            guard let lastItem = last else {
+                return array
+            }
+            array.remove(at: count-1)
+            array.insert(lastItem, at: 0)
+        }
+        return array
+    }
+    
+    mutating func rotated(direction: RotateDirection) {
+        switch direction {
+        case .forward:
+            guard let firstItem = first else {
+                return
+            }
+            remove(at: 0)
+            append(firstItem)
+        case .backward:
+            guard let lastItem = last else {
+                return
+            }
+            remove(at: count-1)
+            insert(lastItem, at: 0)
+        }
+    }
+}

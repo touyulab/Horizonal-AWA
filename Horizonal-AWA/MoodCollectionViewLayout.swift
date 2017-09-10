@@ -53,7 +53,7 @@ class MoodCollectionViewLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         let width = collectionView!.bounds.width
-        return CGSize(width: width, height: 1060)
+        return CGSize(width: width, height: 100000)
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
