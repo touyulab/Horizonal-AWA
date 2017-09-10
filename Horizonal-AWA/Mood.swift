@@ -47,6 +47,31 @@ enum Mood: String {
     }
     
     var image: UIImage {
-        return #imageLiteral(resourceName: "happy")
+        switch self {
+        case .happy:
+            return #imageLiteral(resourceName: "happy")
+        case .excited:
+            return #imageLiteral(resourceName: "excited")
+        case .relax:
+            return #imageLiteral(resourceName: "relax")
+        case .love:
+            return #imageLiteral(resourceName: "love")
+        case .sad:
+            return #imageLiteral(resourceName: "sad")
+        case .dark:
+            return #imageLiteral(resourceName: "dark")
+        case .morning:
+            return #imageLiteral(resourceName: "morning")
+        case .sleep:
+            return #imageLiteral(resourceName: "sleep")
+        case .study:
+            return #imageLiteral(resourceName: "study")
+        case .workout:
+            return #imageLiteral(resourceName: "workouot")
+        case .party:
+            return #imageLiteral(resourceName: "Party")
+        case .drive:
+            return #imageLiteral(resourceName: "drive")
+        }
     }
 }

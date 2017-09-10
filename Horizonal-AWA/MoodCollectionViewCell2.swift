@@ -34,7 +34,7 @@ class MoodCollectionViewCell2: UICollectionViewCell {
     }
     
     private func initmoodImageScrollView() {
-        let size = CGSize(width: 80, height: 80)
+        let size = CGSize(width: 88, height: 88)
         let x = contentView.bounds.width - size.width
         let y = contentView.bounds.height - size.height
 //        moodImageScrollView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y),
@@ -54,10 +54,20 @@ class MoodCollectionViewCell2: UICollectionViewCell {
         moodImageScrollView.isScrollEnabled = false
         
         moodImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0),
-                                                  size: CGSize(width: 120, height: 120)))
+                                                  size: CGSize(width: 140, height: 140)))
         moodImageView.image = mood.image
+        moodImageView.contentMode = .scaleAspectFill
+        let blackLayer = makeBlackLayer(frame: moodImageView.bounds)
+        moodImageView.layer.addSublayer(blackLayer)
         moodImageScrollView.addSubview(moodImageView)
         contentView.addSubview(moodImageScrollView)
+    }
+    
+    private func makeBlackLayer(frame: CGRect) -> CALayer {
+        let blackLayer = CALayer()
+        blackLayer.backgroundColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        blackLayer.frame = frame
+        return blackLayer
     }
     
     private func initBezierLine() {

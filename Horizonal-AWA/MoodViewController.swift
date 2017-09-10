@@ -10,6 +10,8 @@ import UIKit
 
 class MoodViewController: UIViewController {
     
+    fileprivate var moodList: [Mood] = Mood.list
+    
     fileprivate var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
@@ -43,7 +45,8 @@ class MoodViewController: UIViewController {
         collectionView = UICollectionView(frame: frame, collectionViewLayout: MoodCollectionViewLayout())
         collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
         // 無限スクロールのために真ん中からスタートさせる
-        collectionView.contentOffset.y = 49942
+//        collectionView.contentOffset.y = 49942
+        collectionView.contentInset.top = 100
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         view.addSubview(collectionView)
@@ -56,14 +59,23 @@ extension MoodViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 16
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell2", for: indexPath) as! MoodCollectionViewCell2
-        let mood = Mood.list[indexPath.row%Mood.number]
+        let mood = moodList[indexPath.row%12]
+//        rotateMoodList()
         cell.set(mood: mood)
+        // TODO: 根本的に修正する必要あり
+        cell.alpha = 0
         return cell
+    }
+    
+    private func rotateMoodList() {
+        let firstItem = moodList[0]
+        moodList.remove(at: 0)
+        moodList.append(firstItem)
     }
 }
 
@@ -76,12 +88,19 @@ extension MoodViewController: UICollectionViewDelegate {
                 cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-scrollView.contentOffset.y)/6 - 4
             }
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        cell.frame
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // TODO: 根本的に修正する必要あり
+        cell.alpha = 1
+        collectionView.visibleCells
+            .flatMap { $0 as? MoodCollectionViewCell2 }
+            .forEach { cell in
+                cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/5
+                cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-collectionView.contentOffset.y)/6 - 4
+        }
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(indexPath.item)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
 }

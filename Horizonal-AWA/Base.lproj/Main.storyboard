@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mood-Background2" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-PF-e1Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mood-background" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-PF-e1Q">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -113,7 +113,7 @@
     </scenes>
     <resources>
         <image name="AWA-Logo" width="42" height="20"/>
-        <image name="Mood-Background2" width="1024" height="575"/>
         <image name="left-arrow" width="26" height="18"/>
+        <image name="mood-background" width="1024" height="575"/>
     </resources>
 </document>
