@@ -16,9 +16,7 @@ class MoodViewController: UIViewController {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
-//            let nib = UINib(nibName: "MoodCollectionViewCell", bundle: nil)
-//            collectionView.register(nib, forCellWithReuseIdentifier: "MoodCollectionViewCell")
-            collectionView.register(MoodCollectionViewCell2.self, forCellWithReuseIdentifier: "MoodCollectionViewCell2")
+            collectionView.register(MoodCollectionViewCell.self, forCellWithReuseIdentifier: "MoodCollectionViewCell")
         }
     }
 
@@ -63,7 +61,7 @@ extension MoodViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell2", for: indexPath) as! MoodCollectionViewCell2
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell", for: indexPath) as! MoodCollectionViewCell
         let mood = moodList[indexPath.row%12]
 //        rotateMoodList()
         cell.set(mood: mood)
@@ -82,7 +80,7 @@ extension MoodViewController: UICollectionViewDataSource {
 extension MoodViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         collectionView.visibleCells
-            .flatMap { $0 as? MoodCollectionViewCell2 }
+            .flatMap { $0 as? MoodCollectionViewCell }
             .forEach { cell in
                 cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/5
                 cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-scrollView.contentOffset.y)/6 - 4
@@ -93,7 +91,7 @@ extension MoodViewController: UICollectionViewDelegate {
         // TODO: 根本的に修正する必要あり
         cell.alpha = 1
         collectionView.visibleCells
-            .flatMap { $0 as? MoodCollectionViewCell2 }
+            .flatMap { $0 as? MoodCollectionViewCell }
             .forEach { cell in
                 cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/5
                 cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-collectionView.contentOffset.y)/6 - 4
