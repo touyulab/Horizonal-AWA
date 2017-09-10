@@ -15,6 +15,17 @@
 		D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */; };
 		D1741E5C1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */; };
 		D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */; };
+		D182D4561F651BEE000CFABF /* CyberLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4551F651BEE000CFABF /* CyberLine.swift */; };
+		D182D4591F652A4E000CFABF /* PlaylistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4581F652A4E000CFABF /* PlaylistDetailViewController.swift */; };
+		D182D45B1F653D8F000CFABF /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45A1F653D8F000CFABF /* MusicCollectionViewCell.swift */; };
+		D182D45E1F6584CC000CFABF /* PlayMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45D1F6584CC000CFABF /* PlayMusicViewController.swift */; };
+		D182D4601F65874A000CFABF /* PlayMusicNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45F1F65874A000CFABF /* PlayMusicNavigationController.swift */; };
+		D18BD7041F65AB610047AFE6 /* 前前前世.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7031F65AB610047AFE6 /* 前前前世.m4a */; };
+		D18BD7061F65ACF30047AFE6 /* QueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7051F65ACF30047AFE6 /* QueueTableViewCell.swift */; };
+		D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7071F65AD0C0047AFE6 /* QueueTableViewCell.xib */; };
+		D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7091F65ADE90047AFE6 /* TT.m4a */; };
+		D18BD70C1F65AF100047AFE6 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */; };
+		D18BD7101F65B28C0047AFE6 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
@@ -24,6 +35,7 @@
 		D1E130451F602728006886A4 /* Horizonal_AWATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130441F602728006886A4 /* Horizonal_AWATests.swift */; };
 		D1E130501F602728006886A4 /* Horizonal_AWAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1304F1F602728006886A4 /* Horizonal_AWAUITests.swift */; };
 		D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130611F611A79006886A4 /* MoodNavigationController.swift */; };
+		D1E1DBB21F65994000A7D71D /* Thinking-out-Loud.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */; };
 		D1FB09E51F63DE73009EFCAC /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FB09E41F63DE73009EFCAC /* MoodCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +65,17 @@
 		D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		D182D4551F651BEE000CFABF /* CyberLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyberLine.swift; sourceTree = "<group>"; };
+		D182D4581F652A4E000CFABF /* PlaylistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDetailViewController.swift; sourceTree = "<group>"; };
+		D182D45A1F653D8F000CFABF /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
+		D182D45D1F6584CC000CFABF /* PlayMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayMusicViewController.swift; sourceTree = "<group>"; };
+		D182D45F1F65874A000CFABF /* PlayMusicNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayMusicNavigationController.swift; sourceTree = "<group>"; };
+		D18BD7031F65AB610047AFE6 /* 前前前世.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "前前前世.m4a"; sourceTree = "<group>"; };
+		D18BD7051F65ACF30047AFE6 /* QueueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTableViewCell.swift; sourceTree = "<group>"; };
+		D18BD7071F65AD0C0047AFE6 /* QueueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueueTableViewCell.xib; sourceTree = "<group>"; };
+		D18BD7091F65ADE90047AFE6 /* TT.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TT.m4a; sourceTree = "<group>"; };
+		D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +92,7 @@
 		D1E1304F1F602728006886A4 /* Horizonal_AWAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horizonal_AWAUITests.swift; sourceTree = "<group>"; };
 		D1E130511F602728006886A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1E130611F611A79006886A4 /* MoodNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodNavigationController.swift; sourceTree = "<group>"; };
+		D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thinking-out-Loud.m4a"; sourceTree = "<group>"; };
 		D1FB09E41F63DE73009EFCAC /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +124,7 @@
 		D11D795A1F6507A900991382 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D13B022F1F63D8D000B23707 /* Mood.swift */,
 				D11D795B1F6507B600991382 /* Music.swift */,
 				D11D795D1F6507E400991382 /* Playlist.swift */,
 			);
@@ -109,7 +134,6 @@
 		D15942BC1F63D08100B494F1 /* Mood */ = {
 			isa = PBXGroup;
 			children = (
-				D13B022F1F63D8D000B23707 /* Mood.swift */,
 				D1E130611F611A79006886A4 /* MoodNavigationController.swift */,
 				D1E130311F602728006886A4 /* MoodViewController.swift */,
 				D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */,
@@ -126,6 +150,51 @@
 				D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */,
 			);
 			name = Playlist;
+			sourceTree = "<group>";
+		};
+		D182D4541F651BDB000CFABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D182D4551F651BEE000CFABF /* CyberLine.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D182D4571F652A39000CFABF /* PlaylistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D182D4581F652A4E000CFABF /* PlaylistDetailViewController.swift */,
+				D182D45A1F653D8F000CFABF /* MusicCollectionViewCell.swift */,
+			);
+			name = PlaylistDetail;
+			sourceTree = "<group>";
+		};
+		D182D45C1F6584A9000CFABF /* PlayMusic */ = {
+			isa = PBXGroup;
+			children = (
+				D182D45F1F65874A000CFABF /* PlayMusicNavigationController.swift */,
+				D182D45D1F6584CC000CFABF /* PlayMusicViewController.swift */,
+				D18BD70E1F65AF4E0047AFE6 /* QueueTableViewCell */,
+			);
+			name = PlayMusic;
+			sourceTree = "<group>";
+		};
+		D18BD70D1F65AF160047AFE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */,
+				D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D18BD70E1F65AF4E0047AFE6 /* QueueTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D18BD7051F65ACF30047AFE6 /* QueueTableViewCell.swift */,
+				D18BD7071F65AD0C0047AFE6 /* QueueTableViewCell.xib */,
+			);
+			name = QueueTableViewCell;
 			sourceTree = "<group>";
 		};
 		D1C5FEE41F629362001D4361 /* Frameworks */ = {
@@ -160,12 +229,17 @@
 		D1E1302E1F602728006886A4 /* Horizonal-AWA */ = {
 			isa = PBXGroup;
 			children = (
+				D1E1DBAE1F6596E600A7D71D /* Resources */,
 				D1E1302F1F602728006886A4 /* AppDelegate.swift */,
 				D1AE539B1F63AB36002A52AA /* Utility.swift */,
-				D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */,
+				D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */,
+				D18BD70D1F65AF160047AFE6 /* Extensions */,
 				D11D795A1F6507A900991382 /* Model */,
+				D182D4541F651BDB000CFABF /* View */,
 				D15942BC1F63D08100B494F1 /* Mood */,
 				D1741E561F64F91E00A0FE7B /* Playlist */,
+				D182D4571F652A39000CFABF /* PlaylistDetail */,
+				D182D45C1F6584A9000CFABF /* PlayMusic */,
 				D1E130331F602728006886A4 /* Main.storyboard */,
 				D1E130361F602728006886A4 /* Assets.xcassets */,
 				D1E130381F602728006886A4 /* LaunchScreen.storyboard */,
@@ -190,6 +264,16 @@
 				D1E130511F602728006886A4 /* Info.plist */,
 			);
 			path = "Horizonal-AWAUITests";
+			sourceTree = "<group>";
+		};
+		D1E1DBAE1F6596E600A7D71D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */,
+				D18BD7031F65AB610047AFE6 /* 前前前世.m4a */,
+				D18BD7091F65ADE90047AFE6 /* TT.m4a */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +390,10 @@
 				D1E1303A1F602728006886A4 /* LaunchScreen.storyboard in Resources */,
 				D1E130371F602728006886A4 /* Assets.xcassets in Resources */,
 				D1E130351F602728006886A4 /* Main.storyboard in Resources */,
+				D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */,
+				D18BD7041F65AB610047AFE6 /* 前前前世.m4a in Resources */,
+				D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */,
+				D1E1DBB21F65994000A7D71D /* Thinking-out-Loud.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,15 +437,23 @@
 				D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */,
 				D1741E581F64F94100A0FE7B /* PlaylistsViewController.swift in Sources */,
 				D1FB09E51F63DE73009EFCAC /* MoodCollectionViewCell.swift in Sources */,
+				D18BD7061F65ACF30047AFE6 /* QueueTableViewCell.swift in Sources */,
+				D182D4601F65874A000CFABF /* PlayMusicNavigationController.swift in Sources */,
+				D182D4591F652A4E000CFABF /* PlaylistDetailViewController.swift in Sources */,
 				D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */,
+				D18BD70C1F65AF100047AFE6 /* UITableView+Extension.swift in Sources */,
+				D18BD7101F65B28C0047AFE6 /* MusicManager.swift in Sources */,
+				D182D45B1F653D8F000CFABF /* MusicCollectionViewCell.swift in Sources */,
 				D1741E5C1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift in Sources */,
 				D1E130321F602728006886A4 /* MoodViewController.swift in Sources */,
 				D13B02301F63D8D000B23707 /* Mood.swift in Sources */,
+				D182D4561F651BEE000CFABF /* CyberLine.swift in Sources */,
 				D11D795C1F6507B600991382 /* Music.swift in Sources */,
 				D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */,
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,
 				D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */,
 				D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */,
+				D182D45E1F6584CC000CFABF /* PlayMusicViewController.swift in Sources */,
 				D11D795E1F6507E400991382 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

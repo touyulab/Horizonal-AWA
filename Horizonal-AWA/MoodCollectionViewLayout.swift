@@ -13,7 +13,9 @@ class MoodCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
     var radius: CGFloat = 300
     var angle: CGFloat = 0.0 {
         didSet {
+//            let scale = fabs(sin(angle+CGFloat.pi/4))+0.8*(1-fabs(sin(angle+CGFloat.pi/4)))
             transform = CGAffineTransform(translationX: radius * sin(angle), y: radius * cos(angle))
+//                .scaledBy(x: scale, y: scale)
         }
     }
 }

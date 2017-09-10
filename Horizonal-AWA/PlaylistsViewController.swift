@@ -12,6 +12,17 @@ class PlaylistsViewController: UIViewController {
     
     var mood: Mood?
     
+    fileprivate var playlists: [Playlist] = [Playlist.make夏の恋の歌楽しい歌(),
+                                             Playlist.make2017夏フェスの思い出(),
+                                             Playlist.makePOPULAR_SONG(),
+                                             Playlist.make夏の恋の歌楽しい歌(),
+                                             Playlist.make2017夏フェスの思い出(),
+                                             Playlist.makePOPULAR_SONG(),
+                                             Playlist.make夏の恋の歌楽しい歌(),
+                                             Playlist.make2017夏フェスの思い出(),
+                                             Playlist.makePOPULAR_SONG(),
+                                             Playlist.make夏の恋の歌楽しい歌()]
+    
     fileprivate var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
@@ -72,13 +83,13 @@ extension PlaylistsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return playlists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaylistsCollectionViewCell", for: indexPath) as! PlaylistsCollectionViewCell
         
-        cell.set(playlist: Playlist(title: "夏の恋の歌、楽しい歌", comment: "切なかったり、嬉しかったり、花火見て考えました。とにかくいい曲集めました。", musicList: []))
+        cell.set(playlist: playlists[indexPath.item])
         // TODO: 根本的に修正する必要あり
         cell.alpha = 0
         return cell
@@ -94,6 +105,9 @@ extension PlaylistsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        let playlistDetailVC = PlaylistDetailViewController.instantiate(withStoryboard: "Main")
+        playlistDetailVC.playlist = playlists[indexPath.item]
+        show(playlistDetailVC, sender: self)
 //        let playlistVC = PlaylistsViewController.instantiate(withStoryboard: "Main")
 //        playlistVC.mood =  Mood.list[indexPath.item%12]
 //        show(playlistVC, sender: self)

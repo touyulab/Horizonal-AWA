@@ -38,20 +38,20 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
         smallJacketImageView2.frame = CGRect(origin: CGPoint(x: contentView.bounds.width - smallJacketSize.width,
                                                             y: contentView.bounds.height - smallJacketSize.height),
                                             size: smallJacketSize)
-        smallJacketImageView2.image = #imageLiteral(resourceName: "happy")
+        smallJacketImageView2.image = playlist.musicList[2].jacketImage
         contentView.addSubview(smallJacketImageView2)
         
         smallJacketImageView1.frame = CGRect(origin: CGPoint(x: smallJacketImageView2.frame.origin.x,
                                                              y: smallJacketImageView2.frame.origin.y - smallJacketSize.height),
                                              size: smallJacketSize)
-        smallJacketImageView1.image = #imageLiteral(resourceName: "drive")
+        smallJacketImageView1.image = playlist.musicList[1].jacketImage
         contentView.addSubview(smallJacketImageView1)
         
         let bigJacketSize = CGSize(width: smallJacketSize.width*2, height: smallJacketSize.height*2)
         bigJacketImageView.frame = CGRect(origin: CGPoint(x: smallJacketImageView1.frame.origin.x - bigJacketSize.width,
                                                           y: smallJacketImageView1.frame.origin.y),
                                           size: bigJacketSize)
-        bigJacketImageView.image = #imageLiteral(resourceName: "love")
+        bigJacketImageView.image = playlist.musicList[0].jacketImage
         contentView.addSubview(bigJacketImageView)
         
     }

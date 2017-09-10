@@ -13,7 +13,9 @@ class PlaylistsCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes 
     var radius: CGFloat = 400
     var angle: CGFloat = 0.0 {
         didSet {
+//            let scale = fabs(sin(angle+CGFloat.pi/6))+0.6*(1-fabs(sin(angle+CGFloat.pi/6)))
             transform = CGAffineTransform(translationX: radius * sin(angle), y: radius*3/4 * cos(angle))
+//                .scaledBy(x: scale, y: scale)
         }
     }
 }
