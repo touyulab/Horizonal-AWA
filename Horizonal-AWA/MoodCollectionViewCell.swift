@@ -45,6 +45,7 @@ class MoodCollectionViewCell: UICollectionViewCell {
         moodImageScrollView.layer.borderColor = UIColor.white.cgColor
         moodImageScrollView.contentSize = CGSize(width: 120, height: 120)
         moodImageScrollView.isScrollEnabled = false
+        moodImageScrollView.isUserInteractionEnabled = false
         
         moodImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0),
                                                   size: CGSize(width: 140, height: 140)))

@@ -23,13 +23,13 @@ class MoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        initCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        initCollectionView()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,16 +69,6 @@ extension MoodViewController: UICollectionViewDataSource {
         cell.alpha = 0
         return cell
     }
-    
-    private func forwardRotateMoodList() {
-        let firstItem = moodList[0]
-        moodList.remove(at: 0)
-        moodList.append(firstItem)
-    }
-    
-    private func backwardRotateMoodList() {
-        
-    }
 }
 
 extension MoodViewController: UICollectionViewDelegate {
@@ -104,5 +94,8 @@ extension MoodViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        let playlistVC = PlaylistsViewController.instantiate(withStoryboard: "Main")
+        playlistVC.mood = moodList[indexPath.item%12]
+        show(playlistVC, sender: self)
     }
 }

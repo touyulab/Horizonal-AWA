@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,11 +49,52 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707" y="774"/>
+        </scene>
+        <!--Playlists View Controller-->
+        <scene sceneID="hGD-RU-kmt">
+            <objects>
+                <viewController storyboardIdentifier="PlaylistsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g0c-c3-xS5" customClass="PlaylistsViewController" customModule="Horizonal_AWA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eM8-Sj-L4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="lt4-BI-Zc1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TxG-dc-nVs">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOU-E7-EdV">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MOOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cY-5Y-BPC">
+                                <rect key="frame" x="20" y="56" width="210" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dOU-E7-EdV" firstAttribute="height" secondItem="TxG-dc-nVs" secondAttribute="height" id="CFJ-0w-2wX"/>
+                            <constraint firstItem="dOU-E7-EdV" firstAttribute="centerY" secondItem="TxG-dc-nVs" secondAttribute="centerYWithinMargins" id="Jrw-a8-GRL"/>
+                            <constraint firstItem="dOU-E7-EdV" firstAttribute="width" secondItem="TxG-dc-nVs" secondAttribute="width" id="h8p-8s-Vho"/>
+                            <constraint firstItem="dOU-E7-EdV" firstAttribute="centerX" secondItem="TxG-dc-nVs" secondAttribute="centerXWithinMargins" id="qzE-Li-uhP"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="imageView" destination="dOU-E7-EdV" id="w2K-0m-aDI"/>
+                        <outlet property="titleLabel" destination="4cY-5Y-BPC" id="NdD-fJ-K4i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7TL-Sw-FbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415.4422788605698" y="772"/>
         </scene>
         <!--Mood Navigation Controller-->
         <scene sceneID="JC8-8e-za1">
@@ -61,6 +104,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wyx-Mx-X8H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lHg-4H-aiZ"/>

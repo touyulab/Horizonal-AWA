@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11D795C1F6507B600991382 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D795B1F6507B600991382 /* Music.swift */; };
+		D11D795E1F6507E400991382 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D795D1F6507E400991382 /* Playlist.swift */; };
 		D13B02301F63D8D000B23707 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13B022F1F63D8D000B23707 /* Mood.swift */; };
 		D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */; };
+		D1741E581F64F94100A0FE7B /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E571F64F94100A0FE7B /* PlaylistsViewController.swift */; };
+		D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */; };
+		D1741E5C1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */; };
+		D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
@@ -39,8 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D11D795B1F6507B600991382 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		D11D795D1F6507E400991382 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		D13B022F1F63D8D000B23707 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		D15942BD1F63D0C300B494F1 /* MoodCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewLayout.swift; sourceTree = "<group>"; };
+		D1741E571F64F94100A0FE7B /* PlaylistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
+		D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D11D795A1F6507A900991382 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D11D795B1F6507B600991382 /* Music.swift */,
+				D11D795D1F6507E400991382 /* Playlist.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D15942BC1F63D08100B494F1 /* Mood */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +116,16 @@
 				D1FB09E41F63DE73009EFCAC /* MoodCollectionViewCell.swift */,
 			);
 			name = Mood;
+			sourceTree = "<group>";
+		};
+		D1741E561F64F91E00A0FE7B /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				D1741E571F64F94100A0FE7B /* PlaylistsViewController.swift */,
+				D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */,
+				D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */,
+			);
+			name = Playlist;
 			sourceTree = "<group>";
 		};
 		D1C5FEE41F629362001D4361 /* Frameworks */ = {
@@ -131,7 +162,10 @@
 			children = (
 				D1E1302F1F602728006886A4 /* AppDelegate.swift */,
 				D1AE539B1F63AB36002A52AA /* Utility.swift */,
+				D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */,
+				D11D795A1F6507A900991382 /* Model */,
 				D15942BC1F63D08100B494F1 /* Mood */,
+				D1741E561F64F91E00A0FE7B /* Playlist */,
 				D1E130331F602728006886A4 /* Main.storyboard */,
 				D1E130361F602728006886A4 /* Assets.xcassets */,
 				D1E130381F602728006886A4 /* LaunchScreen.storyboard */,
@@ -312,13 +346,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */,
+				D1741E581F64F94100A0FE7B /* PlaylistsViewController.swift in Sources */,
 				D1FB09E51F63DE73009EFCAC /* MoodCollectionViewCell.swift in Sources */,
 				D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */,
+				D1741E5C1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift in Sources */,
 				D1E130321F602728006886A4 /* MoodViewController.swift in Sources */,
 				D13B02301F63D8D000B23707 /* Mood.swift in Sources */,
+				D11D795C1F6507B600991382 /* Music.swift in Sources */,
 				D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */,
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,
 				D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */,
+				D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */,
+				D11D795E1F6507E400991382 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
