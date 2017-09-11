@@ -48,6 +48,9 @@ class PlaylistsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
         let effect = UIBlurEffect(style: .dark)
         for _ in 0...1 {
             let effectView = UIVisualEffectView(effect: effect)

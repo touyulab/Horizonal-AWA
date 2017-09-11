@@ -32,6 +32,20 @@ class PlayMusicViewController: UIViewController {
             layer.frame = jacketImageView.bounds
             layer.backgroundColor = UIColor.black.withAlphaComponent(0.6).cgColor
             jacketImageView.layer.addSublayer(layer)
+            jacketImageView.isUserInteractionEnabled = true
+            let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeJacketImageView(_:)))
+            swipeGestureRecognizer.direction = .down
+            jacketImageView.addGestureRecognizer(swipeGestureRecognizer)
+        }
+    }
+    
+    func swipeJacketImageView(_ sender: UISwipeGestureRecognizer) {
+        print(sender.direction)
+        switch sender.direction {
+        case UISwipeGestureRecognizerDirection.down:
+            dismiss(animated: true, completion: nil)
+        default:
+            return
         }
     }
     
@@ -119,6 +133,7 @@ class PlayMusicViewController: UIViewController {
         let point = CGPoint(x: nextButton.frame.origin.x - size.width,
                             y: nextButton.center.y)
         sequenceBar = SequenceBar(frame: CGRect(origin: point, size: size))
+        sequenceBar.isUserInteractionEnabled = false
         view.addSubview(sequenceBar)
     }
     
