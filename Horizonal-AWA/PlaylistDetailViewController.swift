@@ -59,6 +59,8 @@ class PlaylistDetailViewController: UIViewController {
         [titleLabel, authorLabel, starButton, shareButton].forEach { view.bringSubview(toFront: $0) }
         
         initCollectionView()
+        
+        musicManager.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +123,12 @@ extension PlaylistDetailViewController: UICollectionViewDelegate {
         if let miniPlayerVC = appDelegate?.miniPlayerSubWindow?.rootViewController as? MiniPlayerViewController {
             miniPlayerVC.showMiniPlayer(animated: true)
         }
+        collectionView.reloadData()
+    }
+}
+
+extension PlaylistDetailViewController: MusicManagerDelegate {
+    func changedMusic() {
         collectionView.reloadData()
     }
 }

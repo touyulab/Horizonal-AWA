@@ -96,14 +96,14 @@ class PlayMusicViewController: UIViewController {
         makePlayButton()
         
         musicManager.set(delegate: self)
-        musicManager.play()
+//        musicManager.play()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        animatePlayButton(count: 0)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        animatePlayButton(count: 0)
+//    }
     
     var sequenceBar = SequenceBar()
     var playButton = PlayButton()
@@ -123,7 +123,8 @@ class PlayMusicViewController: UIViewController {
     }
     
     private func makePlayButton() {
-        playButton = PlayButton(frame: .zero, icon: .pause)
+        let icon = musicManager.audioPlayer.isPlaying ? PlayButtonIcon.pause : PlayButtonIcon.playing
+        playButton = PlayButton(frame: .zero, icon: icon)
         playButton.center = CGPoint(x: sequenceBar.frame.origin.x, y: sequenceBar.frame.origin.y + sequenceBar.bounds.height)
         view.addSubview(playButton)
         

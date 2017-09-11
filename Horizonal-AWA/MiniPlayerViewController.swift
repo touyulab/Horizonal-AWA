@@ -37,12 +37,19 @@ class MiniPlayerViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        update()
+    }
+    
     private func makeMiniPlayer() {
         miniPlayer = UIView(frame: CGRect(origin: CGPoint(x: 16, y: view.bounds.height - 68 - 16),
                                               size: CGSize(width: 264, height: 68)))
-        miniPlayer.backgroundColor = UIColor.black.withAlphaComponent(0.64)
+        miniPlayer.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         miniPlayer.layer.masksToBounds = true
         miniPlayer.layer.cornerRadius = 8
+        miniPlayer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedJacketImageView)))
         view.addSubview(miniPlayer)
         
         jacketImageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 36, height: 36))
@@ -50,6 +57,8 @@ class MiniPlayerViewController: UIViewController {
         jacketImageView.contentMode = .scaleAspectFill
         jacketImageView.layer.masksToBounds = true
         jacketImageView.layer.cornerRadius = 2
+//        jacketImageView.isUserInteractionEnabled = true
+//        jacketImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedJacketImageView)))
         miniPlayer.addSubview(jacketImageView)
         
         titleLabel = UILabel(frame: CGRect(x: 16 + 36 + 16, y: 0, width: 100, height: 12))
@@ -58,14 +67,14 @@ class MiniPlayerViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 10, weight: UIFontWeightBold)
         miniPlayer.addSubview(titleLabel)
         
-        playButton = UIButton(frame: CGRect(origin: CGPoint(x: titleLabel.frame.origin4.x + 16, y: 0),
-                                                size: CGSize(width: 24, height: 24)))
+        playButton = UIButton(frame: CGRect(origin: CGPoint(x: titleLabel.frame.origin4.x + 8, y: 0),
+                                                size: CGSize(width: 32, height: 32)))
         playButton.center.y = titleLabel.center.y
         playButton.addTarget(self, action: #selector(tappedPlayButton), for: .touchUpInside)
         miniPlayer.addSubview(playButton)
         
-        nextButton = UIButton(frame: CGRect(origin: CGPoint(x: playButton.frame.origin4.x + 16, y: 0),
-                                            size: CGSize(width: 24, height: 24)))
+        nextButton = UIButton(frame: CGRect(origin: CGPoint(x: playButton.frame.origin4.x + 8, y: 0),
+                                            size: CGSize(width: 32, height: 32)))
         nextButton.center.y = titleLabel.center.y
         nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         nextButton.setImage(#imageLiteral(resourceName: "next2"), for: .normal)
@@ -76,7 +85,7 @@ class MiniPlayerViewController: UIViewController {
         if animated {
             
         } else {
-            miniPlayer.frame.origin.x = -256
+            miniPlayer.frame.origin.x = -miniPlayer.bounds.width
         }
     }
     
@@ -108,7 +117,16 @@ class MiniPlayerViewController: UIViewController {
         update()
     }
     
+    func tappedJacketImageView() {
+        let playMusicNC = PlayMusicNavigationController.instantiate(withStoryboard: "Main")
+        show(playMusicNC, sender: self)
+    }
+    
     private func update() {
+        if musicManager.queue.count == 0 {
+            return
+        }
+        
         jacketImageView.image = musicManager.playingMusic.jacketImage
         jacketImageView.layer.add(CATransition(), forKey: nil)
         titleLabel.text = musicManager.playingMusic.title

@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+protocol MusicManagerDelegate {
+    func changedMusic()
+}
+
 class MusicManager {
     
     static let shared = MusicManager()
@@ -24,6 +28,8 @@ class MusicManager {
         // playingIndexが初期値0だから例外発生する可能性あり
         return queue[playingIndex]
     }
+    
+    var delegate: MusicManagerDelegate?
     
     private init() { }
     
@@ -86,5 +92,7 @@ class MusicManager {
         } catch {
             
         }
+        
+        delegate?.changedMusic()
     }
 }
