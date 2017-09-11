@@ -14,6 +14,12 @@ class PlaylistDetailViewController: UIViewController {
     
     var musicManager = MusicManager.shared
     
+    @IBOutlet weak var commentTextView: UITextView! {
+        didSet {
+            commentTextView.text = playlist?.comment
+        }
+    }
+    
     fileprivate var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
@@ -56,7 +62,8 @@ class PlaylistDetailViewController: UIViewController {
         }
         
         // 位置調整
-        [titleLabel, authorLabel, starButton, shareButton].forEach { view.bringSubview(toFront: $0) }
+        [titleLabel, authorLabel, starButton, shareButton, commentTextView
+            ].forEach { view.bringSubview(toFront: $0) }
         
         initCollectionView()
         
