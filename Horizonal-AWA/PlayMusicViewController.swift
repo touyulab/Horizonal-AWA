@@ -134,29 +134,62 @@ class PlayMusicViewController: UIViewController {
     }
     
     func tappedPlayButton(_ sender: UITapGestureRecognizer) {
-        if self.musicManager.audioPlayer.isPlaying {
-            self.musicManager.pause()
+        if musicManager.audioPlayer.isPlaying {
+            musicManager.pause()
             playButton.set(icon: .playing)
+            playButton.layer.removeAllAnimations()
         } else {
-            self.musicManager.play()
+            musicManager.play()
             playButton.set(icon: .pause)
+            
+//            let convertedPointX = view.convert(playButton.frame.origin, to: sequenceBar).x
+//            print(convertedPointX)
+            let index = calculatePlayButtonY(x: playButton.center.x).index
+            animatePlayButton(count: index)
         }
     }
     
     func pannedPlayButton(_ sender: UIPanGestureRecognizer) {
         playButton.layer.removeAllAnimations()
         let point = sender.translation(in: sequenceBar)
-        sender.view!.center.x += point.x
+        let newPointX = sender.view!.center.x + point.x
+        let convertedPointX = view.convert(CGPoint(x: newPointX, y: 0), to: sequenceBar).x
+        // 行き過ぎを防ぐ
+//        if convertedPointX < 0 || convertedPointX > sequenceBar.bounds.width-1 {
+//            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration
+//        } else {
+//            sender.view!.center.x = newPointX
+//            let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
+//            sender.view!.center.y = y
+//            if sender.state == .ended {
+//                musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
+//                animatePlayButton(count: index)
+//            }
+//        }
+        
+        
+        if convertedPointX < 0 {
+            musicManager.audioPlayer.currentTime = 0
+            sender.setTranslation(.zero, in: sequenceBar)
+            return
+        }
+        
+        if convertedPointX > sequenceBar.bounds.width-1 {
+            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration-1
+            sender.setTranslation(.zero, in: sequenceBar)
+            return
+        }
+        
+        sender.view!.center.x = newPointX
         let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
         sender.view!.center.y = y
-        print(point)
-        sender.setTranslation(.zero, in: sequenceBar)
-        // ここでcalculateしたindexをセットする
-        animatePlayButton(count: index)
-       
         if sender.state == .ended {
             musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
+            if musicManager.audioPlayer.isPlaying {
+                animatePlayButton(count: index)
+            }
         }
+        sender.setTranslation(.zero, in: sequenceBar)
     }
     
     private func calculatePlayButtonY(x: CGFloat) -> (index: Int, y: CGFloat) {
@@ -221,6 +254,7 @@ class PlayMusicViewController: UIViewController {
         playButton.layer.removeAllAnimations()
         playButton.removeFromSuperview()
         makePlayButton()
+        musicManager.set(delegate: self)
         animatePlayButton(count: 0)
     }
 }
