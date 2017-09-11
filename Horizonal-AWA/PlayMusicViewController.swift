@@ -127,8 +127,10 @@ class PlayMusicViewController: UIViewController {
         playButton.center = CGPoint(x: sequenceBar.frame.origin.x, y: sequenceBar.frame.origin.y + sequenceBar.bounds.height)
         view.addSubview(playButton)
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedPlayButton(_:)))
-        playButton.addGestureRecognizer(gesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedPlayButton(_:)))
+        playButton.addGestureRecognizer(tapGesture)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(pannedPlayButton(_:)))
+        playButton.addGestureRecognizer(panGesture)
     }
     
     func tappedPlayButton(_ sender: UITapGestureRecognizer) {
@@ -139,6 +141,38 @@ class PlayMusicViewController: UIViewController {
             self.musicManager.play()
             playButton.set(icon: .pause)
         }
+    }
+    
+    func pannedPlayButton(_ sender: UIPanGestureRecognizer) {
+        playButton.layer.removeAllAnimations()
+        let point = sender.translation(in: sequenceBar)
+        sender.view!.center.x += point.x
+        let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
+        sender.view!.center.y = y
+        print(point)
+        sender.setTranslation(.zero, in: sequenceBar)
+        // ここでcalculateしたindexをセットする
+        animatePlayButton(count: index)
+       
+        if sender.state == .ended {
+            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
+        }
+    }
+    
+    private func calculatePlayButtonY(x: CGFloat) -> (index: Int, y: CGFloat) {
+        var index = 0
+        var oldDiff: CGFloat = 10000000
+        
+        for (i, point) in sequenceBar.points.enumerated() {
+            let convertedPoint = sequenceBar.convert(point, to: view)
+            let diff = abs(x - convertedPoint.x)
+            if oldDiff > diff {
+                oldDiff = diff
+                index = i
+            }
+        }
+        
+        return (index, sequenceBar.convert(sequenceBar.points[index], to: view).y)
     }
     
     private func animatePlayButton(count: Int) {
