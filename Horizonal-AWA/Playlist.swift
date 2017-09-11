@@ -101,4 +101,30 @@ extension Playlist {
                                     SUMMER_SONG,
                                     Like_OHH_AHH])
     }
+    
+    static func makeBeautifulSunset() -> Playlist {
+        let SUMMER_SONG = Music.makeSUMMER_SONG()
+        let Like_OHH_AHH = Music.makeLike_OHH_AHH()
+        let Thinking_out_Loud = Music.makeThinking_out_Loud()
+        let ワタリドリ = Music.makeワタリドリ()
+        return Playlist(id: 2,
+                        title: "🌸Beautiful sunset🌸",
+                        comment: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸",
+                        musicList: [ワタリドリ,
+                                    Like_OHH_AHH,
+                                    Thinking_out_Loud,
+                                    SUMMER_SONG,
+                                    ワタリドリ,
+                                    Like_OHH_AHH,
+                                    Thinking_out_Loud,
+                                    SUMMER_SONG,
+                                    ワタリドリ,
+                                    Like_OHH_AHH,
+                                    Thinking_out_Loud,
+                                    SUMMER_SONG,
+                                    ワタリドリ,
+                                    Like_OHH_AHH,
+                                    Thinking_out_Loud,
+                                    SUMMER_SONG])
+    }
 }

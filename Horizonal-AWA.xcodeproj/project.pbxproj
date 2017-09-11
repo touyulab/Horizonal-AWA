@@ -28,6 +28,7 @@
 		D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */; };
 		D18BD7141F6621880047AFE6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */; };
 		D18BD7161F66222C0047AFE6 /* 前前前世.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7151F66222C0047AFE6 /* 前前前世.m4a */; };
+		D18BD7181F665DB00047AFE6 /* SequenceBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7171F665DB00047AFE6 /* SequenceBar.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
@@ -80,6 +81,7 @@
 		D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ワタリドリ.m4a"; sourceTree = "<group>"; };
 		D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D18BD7151F66222C0047AFE6 /* 前前前世.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "前前前世.m4a"; sourceTree = "<group>"; };
+		D18BD7171F665DB00047AFE6 /* SequenceBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceBar.swift; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D182D4551F651BEE000CFABF /* CyberLine.swift */,
+				D18BD7171F665DB00047AFE6 /* SequenceBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				D13B02301F63D8D000B23707 /* Mood.swift in Sources */,
 				D182D4561F651BEE000CFABF /* CyberLine.swift in Sources */,
 				D11D795C1F6507B600991382 /* Music.swift in Sources */,
+				D18BD7181F665DB00047AFE6 /* SequenceBar.swift in Sources */,
 				D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */,
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,
 				D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */,

@@ -74,7 +74,7 @@ class PlaylistDetailViewController: UIViewController {
         collectionView = UICollectionView(frame: frame, collectionViewLayout: MoodCollectionViewLayout())
         collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
         // 無限スクロールのために真ん中からスタートさせる
-        collectionView.contentOffset.y = 49942
+        collectionView.contentOffset.y = 50232
         //        collectionView.contentInset.top = 100
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

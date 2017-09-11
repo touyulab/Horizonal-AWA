@@ -106,6 +106,7 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
     
     private func initCommentLabel() {
         commentTextView = makeCommentLabel()
+        commentTextView.isEditable = false
         contentView.addSubview(commentTextView)
     }
 }

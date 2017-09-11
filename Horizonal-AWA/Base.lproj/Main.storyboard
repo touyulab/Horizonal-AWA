@@ -219,17 +219,25 @@
                                     <constraint firstAttribute="width" secondItem="rhy-A9-a7W" secondAttribute="height" multiplier="1:1" id="yof-DO-ShQ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWv-ox-9LV">
-                                <rect key="frame" x="374" y="253" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWv-ox-9LV">
+                                <rect key="frame" x="366" y="239" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="D8p-sB-Xdp"/>
+                                    <constraint firstAttribute="width" constant="48" id="OHu-ku-iIR"/>
+                                </constraints>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="tappedBackButton:" destination="Crq-By-55W" eventType="touchUpInside" id="toN-AN-dwH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoa-hL-SBL">
-                                <rect key="frame" x="594" y="100" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoa-hL-SBL">
+                                <rect key="frame" x="586" y="99" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="eCY-vE-aeL"/>
+                                    <constraint firstAttribute="height" constant="48" id="syy-vO-mvH"/>
+                                </constraints>
                                 <state key="normal" image="next"/>
                                 <connections>
                                     <action selector="tappedNextButton:" destination="Crq-By-55W" eventType="touchUpInside" id="QCK-GN-Ove"/>
@@ -265,14 +273,18 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rhy-A9-a7W" secondAttribute="trailing" constant="17" id="5Kb-tJ-gNa"/>
+                            <constraint firstItem="FWv-ox-9LV" firstAttribute="bottom" secondItem="rhy-A9-a7W" secondAttribute="bottom" constant="-72" id="Cnp-oo-BiI"/>
                             <constraint firstItem="rhy-A9-a7W" firstAttribute="leading" secondItem="d3u-RM-Xeb" secondAttribute="trailing" constant="16" id="EJq-PY-cmy"/>
+                            <constraint firstItem="rhy-A9-a7W" firstAttribute="leading" secondItem="FWv-ox-9LV" secondAttribute="leading" constant="-16" id="PfF-Vi-zVC"/>
                             <constraint firstItem="d3u-RM-Xeb" firstAttribute="leading" secondItem="Ds2-NN-T0J" secondAttribute="leading" id="PsX-DI-UuA"/>
                             <constraint firstAttribute="bottomMargin" secondItem="d3u-RM-Xeb" secondAttribute="bottom" id="S5J-FR-UzZ"/>
                             <constraint firstItem="d3u-RM-Xeb" firstAttribute="top" secondItem="ycL-cW-b0d" secondAttribute="bottom" constant="40" id="YC0-Uy-NlQ"/>
                             <constraint firstItem="6WY-cC-2Rh" firstAttribute="top" secondItem="rhy-A9-a7W" secondAttribute="top" constant="-14" id="lWV-hb-qBz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="rhy-A9-a7W" secondAttribute="bottom" constant="16" id="lh9-5A-6X1"/>
                             <constraint firstItem="6WY-cC-2Rh" firstAttribute="centerX" secondItem="d3u-RM-Xeb" secondAttribute="centerX" id="nff-cH-qIv"/>
+                            <constraint firstItem="rhy-A9-a7W" firstAttribute="top" secondItem="Zoa-hL-SBL" secondAttribute="top" constant="-40" id="oet-hw-cGx"/>
                             <constraint firstItem="6WY-cC-2Rh" firstAttribute="leading" secondItem="R2D-dg-0Zu" secondAttribute="trailing" constant="8" id="ooa-fy-XAL"/>
+                            <constraint firstItem="Zoa-hL-SBL" firstAttribute="trailing" secondItem="rhy-A9-a7W" secondAttribute="trailing" constant="-16" id="tqV-HE-Y1U"/>
                             <constraint firstItem="R2D-dg-0Zu" firstAttribute="leading" secondItem="Ds2-NN-T0J" secondAttribute="leading" constant="16" id="ymf-K3-pnC"/>
                             <constraint firstItem="R2D-dg-0Zu" firstAttribute="centerY" secondItem="6WY-cC-2Rh" secondAttribute="centerY" id="yvI-36-ir4"/>
                         </constraints>

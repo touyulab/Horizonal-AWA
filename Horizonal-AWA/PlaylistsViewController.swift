@@ -15,13 +15,13 @@ class PlaylistsViewController: UIViewController {
     fileprivate var playlists: [Playlist] = [Playlist.make夏の恋の歌楽しい歌(),
                                              Playlist.make2017夏フェスの思い出(),
                                              Playlist.makePOPULAR_SONG(),
+                                             Playlist.makeBeautifulSunset(),
                                              Playlist.make夏の恋の歌楽しい歌(),
                                              Playlist.make2017夏フェスの思い出(),
                                              Playlist.makePOPULAR_SONG(),
+                                             Playlist.makeBeautifulSunset(),
                                              Playlist.make夏の恋の歌楽しい歌(),
-                                             Playlist.make2017夏フェスの思い出(),
-                                             Playlist.makePOPULAR_SONG(),
-                                             Playlist.make夏の恋の歌楽しい歌()]
+                                             Playlist.make2017夏フェスの思い出()]
     
     fileprivate var collectionView: UICollectionView! {
         didSet {
@@ -69,7 +69,7 @@ class PlaylistsViewController: UIViewController {
         collectionView = UICollectionView(frame: frame, collectionViewLayout: PlaylistsCollectionViewLayout())
         collectionView.backgroundColor = UIColor.white.withAlphaComponent(0)
         // 無限スクロールのために真ん中からスタートさせる
-        collectionView.contentOffset.y = 49942
+        collectionView.contentOffset.y = 49384
         //        collectionView.contentInset.top = 100
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -88,10 +88,16 @@ extension PlaylistsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaylistsCollectionViewCell", for: indexPath) as! PlaylistsCollectionViewCell
-        
-        cell.set(playlist: playlists[indexPath.item])
+        let playlist = playlists[indexPath.item]
+        cell.set(playlist: playlist)
         // TODO: 根本的に修正する必要あり
         cell.alpha = 0
+        
+        if playlist.id == MusicManager.shared.playingPlaylistID {
+            cell.titleLabel.textColor = .awaOrange
+        } else {
+            cell.titleLabel.textColor = .white
+        }
         return cell
     }
 }
