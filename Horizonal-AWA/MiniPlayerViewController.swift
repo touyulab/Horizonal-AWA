@@ -11,9 +11,9 @@ import UIKit
 class MiniPlayerViewController: UIViewController {
     
     private var musicManager = MusicManager.shared
-    private var miniPlayer = UIView()
+    var miniPlayer = UIView()
     
-    private var jacketImageView = UIImageView()
+    var jacketImageView = UIImageView()
     private var titleLabel = UILabel()
     private var playButton = UIButton()
     private var nextButton = UIButton()
@@ -132,6 +132,7 @@ class MiniPlayerViewController: UIViewController {
     
     func tappedJacketImageView() {
         let playMusicNC = PlayMusicNavigationController.instantiate(withStoryboard: "Main")
+        playMusicNC.transitioningDelegate = self
         show(playMusicNC, sender: self)
     }
     
@@ -197,6 +198,122 @@ class MiniPlayerViewController: UIViewController {
 //                animatePlayButton(count: index)
 //            }
 //        }
+    }
+}
+
+extension MiniPlayerViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return Animation(transitionMode: .push)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return Animation(transitionMode: .pop)
+    }
+}
+
+enum TransitionMode {
+    case push
+    case pop
+}
+
+class Animation : NSObject, UIViewControllerAnimatedTransitioning {
+    
+    var transitionMode: TransitionMode
+    
+    init(transitionMode: TransitionMode) {
+        self.transitionMode = transitionMode
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.2
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        switch transitionMode {
+        case .push:
+            push(using: transitionContext)
+        case .pop:
+            pop(using: transitionContext)
+        }
+    }
+    
+    private func push(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? MiniPlayerViewController
+        let toViewCotnroller = transitionContext.viewController(forKey: .to)
+        
+        let containerView = transitionContext.containerView
+        
+        let fromView = fromViewCotnroller?.view
+        let toView = toViewCotnroller?.view
+        
+        fromView?.frame = transitionContext.initialFrame(for: fromViewCotnroller!)
+        toView?.frame = transitionContext.finalFrame(for: toViewCotnroller!)
+        
+        let imageViewPotision = fromViewCotnroller!.miniPlayer.convert(fromViewCotnroller!.jacketImageView.frame.origin, to: containerView)
+        let copiedJacketImageView = UIImageView(frame: CGRect(origin: imageViewPotision, size: fromViewCotnroller!.jacketImageView.bounds.size))
+        copiedJacketImageView.image = fromViewCotnroller?.jacketImageView.image
+        copiedJacketImageView.contentMode = fromViewCotnroller!.jacketImageView.contentMode
+        fromViewCotnroller?.jacketImageView.alpha = 0
+        containerView.addSubview(copiedJacketImageView)
+        
+        fromView?.alpha = 1.0
+        toView?.alpha = 0.0
+        
+        containerView.addSubview(toView!)
+        
+        UIView.animate(withDuration: 0.4, animations: { _ in
+            copiedJacketImageView.frame = CGRect(x: 350.0, y: 59.0, width: 300, height: 300)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2, animations: { _ in
+                fromView?.alpha = 0.0
+                toView?.alpha = 1.0
+            }, completion: { _ in
+                copiedJacketImageView.removeFromSuperview()
+                let wasCanceled = transitionContext.transitionWasCancelled
+                transitionContext.completeTransition(!wasCanceled)
+            })
+        })
+    }
+    
+    private func pop(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromViewCotnroller = transitionContext.viewController(forKey: .from) as! PlayMusicNavigationController
+        let playMusicViewController = fromViewCotnroller.viewControllers.first as! PlayMusicViewController
+        let toViewCotnroller = transitionContext.viewController(forKey: .to) as! MiniPlayerViewController
+        
+        let containerView = transitionContext.containerView
+        
+        let fromView = fromViewCotnroller.view
+        let toView = toViewCotnroller.view
+        
+        fromView?.frame = transitionContext.initialFrame(for: fromViewCotnroller)
+        toView?.frame = transitionContext.finalFrame(for: toViewCotnroller)
+        
+        containerView.addSubview(toView!)
+        
+        let copiedJacketImageView = UIImageView(frame: playMusicViewController.jacketImageView.frame)
+        copiedJacketImageView.image = playMusicViewController.jacketImageView.image
+        copiedJacketImageView.contentMode = playMusicViewController.jacketImageView.contentMode
+        containerView.addSubview(copiedJacketImageView)
+        
+        fromView?.alpha = 1.0
+        toView?.alpha = 0.0
+        
+        playMusicViewController.jacketImageView.alpha = 0
+        
+        UIView.animate(withDuration: 0.6, animations: { _ in
+            let imageViewPotision = toViewCotnroller.miniPlayer.convert(toViewCotnroller.jacketImageView.frame.origin, to: containerView)
+            copiedJacketImageView.frame = CGRect(origin: imageViewPotision, size: toViewCotnroller.jacketImageView.bounds.size)
+            fromView?.alpha = 0.0
+            toView?.alpha = 1.0
+        }, completion: { _ in
+            copiedJacketImageView.removeFromSuperview()
+            toViewCotnroller.jacketImageView.alpha = 1.0
+            playMusicViewController.jacketImageView.alpha = 1.0
+            let wasCanceled = transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(!wasCanceled)
+        })
+
     }
 }
 
