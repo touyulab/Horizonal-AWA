@@ -62,6 +62,12 @@ class PlaylistsViewController: UIViewController {
         initCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
+    
     private func initCollectionView() {
         let size = CGSize(width: 600, height: view.bounds.height)
         let point = CGPoint(x: view.bounds.width-size.width, y: 0)

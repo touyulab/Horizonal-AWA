@@ -61,11 +61,38 @@ class SequenceBar: UIView {
     }
 }
 
+enum PlayButtonIcon {
+    case playing
+    case pause
+    
+    var image: UIImage {
+        switch self {
+        case .playing:
+            return #imageLiteral(resourceName: "playing")
+        case .pause:
+            return #imageLiteral(resourceName: "pause")
+        }
+    }
+}
+
 class PlayButton: UIView {
     
     private let size = CGSize(width: 38, height: 38)
+    private var view = UIView()
+    private var imageView = UIImageView()
     
     var tappedAction: (() -> Void)?
+    
+    convenience init(frame: CGRect, icon: PlayButtonIcon) {
+        self.init(frame: frame)
+        
+        imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 10, height: 10)))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = icon.image
+        imageView.center = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
+//        imageView.layer.add(CATransition(), forKey: nil)
+        view.addSubview(imageView)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: CGRect(origin: frame.origin, size: size))
@@ -74,18 +101,12 @@ class PlayButton: UIView {
         layer.masksToBounds = true
         layer.cornerRadius = size.width/2
         
-        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 23, height: 23)))
+        view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 23, height: 23)))
         view.backgroundColor = .awaOrange
         view.center = center
         view.layer.masksToBounds = true
         view.layer.cornerRadius = view.bounds.size.width/2
         addSubview(view)
-//        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.tapped(_:)))
-//        view.addGestureRecognizer(gesture)
-//        addSubview(view)
-//
-//        isUserInteractionEnabled = true
-//        view.isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -96,4 +117,7 @@ class PlayButton: UIView {
         tappedAction?()
     }
     
+    func set(icon: PlayButtonIcon) {
+        imageView.image = icon.image
+    }
 }

@@ -123,7 +123,7 @@ class PlayMusicViewController: UIViewController {
     }
     
     private func makePlayButton() {
-        playButton = PlayButton(frame: .zero)
+        playButton = PlayButton(frame: .zero, icon: .pause)
         playButton.center = CGPoint(x: sequenceBar.frame.origin.x, y: sequenceBar.frame.origin.y + sequenceBar.bounds.height)
         view.addSubview(playButton)
         
@@ -134,8 +134,10 @@ class PlayMusicViewController: UIViewController {
     func tappedPlayButton(_ sender: UITapGestureRecognizer) {
         if self.musicManager.audioPlayer.isPlaying {
             self.musicManager.pause()
+            playButton.set(icon: .playing)
         } else {
             self.musicManager.play()
+            playButton.set(icon: .pause)
         }
     }
     
@@ -183,7 +185,6 @@ class PlayMusicViewController: UIViewController {
         backgroundImageView.layer.add(CATransition(), forKey: nil)
         
         playButton.layer.removeAllAnimations()
-        
         playButton.removeFromSuperview()
         makePlayButton()
         animatePlayButton(count: 0)

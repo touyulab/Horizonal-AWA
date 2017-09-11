@@ -18,7 +18,7 @@ class MusicManager {
     
     var playingIndex = 0
 //    var playingPlaylist: Playlist?
-    var playingPlaylistID: Int = 0
+    var playingPlaylistID: Int?
     
     var playingMusic: Music {
         return queue[playingIndex]

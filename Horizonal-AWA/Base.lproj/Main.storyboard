@@ -258,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2D-dg-0Zu">
-                                <rect key="frame" x="16" y="45" width="111.5" height="14.5"/>
+                                <rect key="frame" x="16" y="45" width="37.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="rhy-A9-a7W" secondAttribute="bottom" constant="16" id="lh9-5A-6X1"/>
                             <constraint firstItem="6WY-cC-2Rh" firstAttribute="centerX" secondItem="d3u-RM-Xeb" secondAttribute="centerX" id="nff-cH-qIv"/>
                             <constraint firstItem="rhy-A9-a7W" firstAttribute="top" secondItem="Zoa-hL-SBL" secondAttribute="top" constant="-40" id="oet-hw-cGx"/>
-                            <constraint firstItem="6WY-cC-2Rh" firstAttribute="leading" secondItem="R2D-dg-0Zu" secondAttribute="trailing" constant="8" id="ooa-fy-XAL"/>
+                            <constraint firstItem="6WY-cC-2Rh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R2D-dg-0Zu" secondAttribute="trailing" constant="8" id="ooa-fy-XAL"/>
                             <constraint firstItem="Zoa-hL-SBL" firstAttribute="trailing" secondItem="rhy-A9-a7W" secondAttribute="trailing" constant="-16" id="tqV-HE-Y1U"/>
                             <constraint firstItem="R2D-dg-0Zu" firstAttribute="leading" secondItem="Ds2-NN-T0J" secondAttribute="leading" constant="16" id="ymf-K3-pnC"/>
                             <constraint firstItem="R2D-dg-0Zu" firstAttribute="centerY" secondItem="6WY-cC-2Rh" secondAttribute="centerY" id="yvI-36-ir4"/>
