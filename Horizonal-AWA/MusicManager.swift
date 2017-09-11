@@ -14,9 +14,11 @@ class MusicManager {
     static let shared = MusicManager()
     
     var audioPlayer = AVAudioPlayer()
-    
     var queue: [Music] = []
+    
     var playingIndex = 0
+//    var playingPlaylist: Playlist?
+    var playingPlaylistID: Int = 0
     
     var playingMusic: Music {
         return queue[playingIndex]
@@ -24,34 +26,21 @@ class MusicManager {
     
     private init() { }
     
+    private var avAudioPlayerDelegate: AVAudioPlayerDelegate?
+    
     func set(delegate: AVAudioPlayerDelegate?) {
+        audioPlayer.delegate = avAudioPlayerDelegate
         audioPlayer.delegate = delegate
     }
     
-    func set(playlist: [Music], index: Int) {
-        queue = playlist
+    func set(playlist: Playlist, index: Int) {
+        playingPlaylistID = playlist.id
+        queue = playlist.musicList
         playingIndex = index
-        guard let url = queue[playingIndex].url else { return }
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-        } catch {
-            
-        }
+        play(index: playingIndex)
     }
     
-    func set(music: Music) {
-        guard let url = music.url else { return }
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.prepareToPlay()
-        } catch {
-            
-        }
-    }
-    
+    // queueのindex番目を再生する
     func play(index: Int) {
         playingIndex = index
         set(music: queue[index])
@@ -73,20 +62,28 @@ class MusicManager {
             playingIndex += 1
         }
         
-        guard let url = queue[playingIndex].url else { return }
+        play(index: playingIndex)
+    }
+    
+    func back() {
+        if playingIndex-1 < 0 {
+            playingIndex = queue.count-1
+        } else {
+            playingIndex -= 1
+        }
+        
+        play(index: playingIndex)
+    }
+    
+    private func set(music: Music) {
+        guard let url = music.url else { return }
         
         do {
-            
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.delegate = avAudioPlayerDelegate
             audioPlayer.prepareToPlay()
         } catch {
             
         }
-        
-        play()
-    }
-    
-    func back() {
-        
     }
 }

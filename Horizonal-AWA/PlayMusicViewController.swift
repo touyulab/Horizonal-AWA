@@ -13,32 +13,54 @@ class PlayMusicViewController: UIViewController {
     
     var musicManager = MusicManager.shared
     
-    @IBOutlet dynamic fileprivate weak var tableView: UITableView!
-    @IBOutlet weak var jacketImageView: UIImageView!
+    @IBOutlet dynamic fileprivate weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.tableFooterView = UIView()
+            tableView.backgroundColor = UIColor.white.withAlphaComponent(0)
+            tableView.register(QueueTableViewCell.self)
+        }
+    }
     
-    private var backgroundImageView = UIImageView()
+    @IBOutlet weak var jacketImageView: UIImageView! {
+        didSet {
+            jacketImageView.image = musicManager.playingMusic.jacketImage
+            jacketImageView.contentMode = .scaleAspectFill
+            jacketImageView.layer.masksToBounds = true
+            let layer = CALayer()
+            layer.frame = jacketImageView.bounds
+            layer.backgroundColor = UIColor.black.withAlphaComponent(0.6).cgColor
+            jacketImageView.layer.addSublayer(layer)
+        }
+    }
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = musicManager.playingMusic.title
+        }
+    }
+    
+    @IBOutlet weak var singerLabel: UILabel! {
+        didSet {
+            singerLabel.text = musicManager.playingMusic.singer
+        }
+    }
+    
+    private var backgroundImageView = UIImageView() {
+        didSet {
+            backgroundImageView.image = musicManager.playingMusic.jacketImage
+            backgroundImageView.contentMode = .scaleAspectFill
+            view.addSubview(backgroundImageView)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.backgroundColor = UIColor.white.withAlphaComponent(0)
-        tableView.register(QueueTableViewCell.self)
-        
         backgroundImageView = UIImageView(frame: view.bounds)
-        backgroundImageView.image = musicManager.playingMusic.jacketImage
-        backgroundImageView.contentMode = .scaleAspectFill
-        view.addSubview(backgroundImageView)
-        
-        jacketImageView.image = musicManager.playingMusic.jacketImage
-        jacketImageView.contentMode = .scaleAspectFill
-        jacketImageView.layer.masksToBounds = true
-        let layer = CALayer()
-        layer.frame = jacketImageView.bounds
-        layer.backgroundColor = UIColor.black.withAlphaComponent(0.4).cgColor
-        jacketImageView.layer.addSublayer(layer)
         
         // ブラー
         let effect = UIBlurEffect(style: .dark)
@@ -47,18 +69,38 @@ class PlayMusicViewController: UIViewController {
             effectView.frame = UIScreen.main.bounds
             effectView.alpha = 1
             view.addSubview(effectView)
+            view.sendSubview(toBack: effectView)
         }
         
-        view.bringSubview(toFront: tableView)
-        view.bringSubview(toFront: jacketImageView)
+        view.sendSubview(toBack: backgroundImageView)
         
-        musicManager.audioPlayer.delegate = self
+        musicManager.set(delegate: self)
         musicManager.play()
-        musicManager.audioPlayer.currentTime = TimeInterval(260)
     }
     
     @IBAction func tappedCloseButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tappedNextButton(_ sender: UIButton) {
+        musicManager.next()
+        refresh()
+    }
+    
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        musicManager.back()
+        refresh()
+    }
+    
+    fileprivate func refresh() {
+        tableView.reloadData()
+        
+        titleLabel.text = musicManager.playingMusic.title
+        singerLabel.text = musicManager.playingMusic.singer
+        jacketImageView.image = musicManager.playingMusic.jacketImage
+        jacketImageView.layer.add(CATransition(), forKey: nil)
+        backgroundImageView.image = musicManager.playingMusic.jacketImage
+        backgroundImageView.layer.add(CATransition(), forKey: nil)
     }
 }
 
@@ -72,7 +114,7 @@ extension PlayMusicViewController: UITableViewDataSource {
         cell.set(music: musicManager.queue[indexPath.row])
         cell.backgroundColor = .clear
         if indexPath.row == musicManager.playingIndex {
-            cell.titleLabel.textColor = .orange
+            cell.titleLabel.textColor = .awaOrange
         } else {
             cell.titleLabel.textColor = .white
         }
@@ -83,15 +125,13 @@ extension PlayMusicViewController: UITableViewDataSource {
 extension PlayMusicViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         musicManager.play(index: indexPath.row)
-        musicManager.set(delegate: self)
-        tableView.reloadData()
+        refresh()
     }
 }
 
 extension PlayMusicViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         musicManager.next()
-        musicManager.set(delegate: self)
-        tableView.reloadData()
+        refresh()
     }
 }

@@ -61,6 +61,12 @@ class PlaylistDetailViewController: UIViewController {
         initCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
+    
     private func initCollectionView() {
         let size = CGSize(width: 600, height: view.bounds.height)
         let point = CGPoint(x: view.bounds.width-size.width, y: 0)
@@ -91,37 +97,26 @@ extension PlaylistDetailViewController: UICollectionViewDataSource {
         cell.set(music: playlist!.musicList[indexPath.item])
         // TODO: 根本的に修正する必要あり
         cell.alpha = 0
+        // 再生している曲と同じプレイリスト且つindexが一致したもののタイトルをオレンジにする
+        if playlist?.id == musicManager.playingPlaylistID && indexPath.item == musicManager.playingIndex {
+            cell.titleLabel.textColor = .awaOrange
+        } else {
+            cell.titleLabel.textColor = .white
+        }
         return cell
     }
 }
 
 extension PlaylistDetailViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        collectionView.visibleCells
-            .flatMap { $0 as? MoodCollectionViewCell }
-            .forEach { cell in
-                //                cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/5
-                //                cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-scrollView.contentOffset.y)/6 - 4
-                cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/10
-                cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-scrollView.contentOffset.y)/10 - 4
-                
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // TODO: 根本的に修正する必要あり
         cell.alpha = 1
-        collectionView.visibleCells
-            .flatMap { $0 as? MoodCollectionViewCell }
-            .forEach { cell in
-                cell.moodImageScrollView.contentOffset.x = cell.frame.origin.x/10
-                cell.moodImageScrollView.contentOffset.y = (cell.frame.origin.y-collectionView.contentOffset.y)/10 - 4
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let playMusicNavigationController = PlayMusicNavigationController.instantiate(withStoryboard: "Main")
         show(playMusicNavigationController, sender: self)
-        musicManager.set(playlist: playlist?.musicList ?? [], index: indexPath.item)
+        musicManager.set(playlist: playlist!, index: indexPath.item)
+        collectionView.reloadData()
     }
 }

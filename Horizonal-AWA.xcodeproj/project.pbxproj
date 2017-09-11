@@ -20,12 +20,14 @@
 		D182D45B1F653D8F000CFABF /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45A1F653D8F000CFABF /* MusicCollectionViewCell.swift */; };
 		D182D45E1F6584CC000CFABF /* PlayMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45D1F6584CC000CFABF /* PlayMusicViewController.swift */; };
 		D182D4601F65874A000CFABF /* PlayMusicNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D45F1F65874A000CFABF /* PlayMusicNavigationController.swift */; };
-		D18BD7041F65AB610047AFE6 /* 前前前世.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7031F65AB610047AFE6 /* 前前前世.m4a */; };
 		D18BD7061F65ACF30047AFE6 /* QueueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7051F65ACF30047AFE6 /* QueueTableViewCell.swift */; };
 		D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7071F65AD0C0047AFE6 /* QueueTableViewCell.xib */; };
 		D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7091F65ADE90047AFE6 /* TT.m4a */; };
 		D18BD70C1F65AF100047AFE6 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */; };
 		D18BD7101F65B28C0047AFE6 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */; };
+		D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */; };
+		D18BD7141F6621880047AFE6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */; };
+		D18BD7161F66222C0047AFE6 /* 前前前世.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7151F66222C0047AFE6 /* 前前前世.m4a */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
@@ -70,12 +72,14 @@
 		D182D45A1F653D8F000CFABF /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		D182D45D1F6584CC000CFABF /* PlayMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayMusicViewController.swift; sourceTree = "<group>"; };
 		D182D45F1F65874A000CFABF /* PlayMusicNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayMusicNavigationController.swift; sourceTree = "<group>"; };
-		D18BD7031F65AB610047AFE6 /* 前前前世.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "前前前世.m4a"; sourceTree = "<group>"; };
 		D18BD7051F65ACF30047AFE6 /* QueueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTableViewCell.swift; sourceTree = "<group>"; };
 		D18BD7071F65AD0C0047AFE6 /* QueueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueueTableViewCell.xib; sourceTree = "<group>"; };
 		D18BD7091F65ADE90047AFE6 /* TT.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TT.m4a; sourceTree = "<group>"; };
 		D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ワタリドリ.m4a"; sourceTree = "<group>"; };
+		D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D18BD7151F66222C0047AFE6 /* 前前前世.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "前前前世.m4a"; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,7 @@
 			children = (
 				D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */,
 				D18BD70B1F65AF100047AFE6 /* UITableView+Extension.swift */,
+				D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -269,9 +274,10 @@
 		D1E1DBAE1F6596E600A7D71D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */,
 				D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */,
-				D18BD7031F65AB610047AFE6 /* 前前前世.m4a */,
 				D18BD7091F65ADE90047AFE6 /* TT.m4a */,
+				D18BD7151F66222C0047AFE6 /* 前前前世.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -391,7 +397,8 @@
 				D1E130371F602728006886A4 /* Assets.xcassets in Resources */,
 				D1E130351F602728006886A4 /* Main.storyboard in Resources */,
 				D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */,
-				D18BD7041F65AB610047AFE6 /* 前前前世.m4a in Resources */,
+				D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */,
+				D18BD7161F66222C0047AFE6 /* 前前前世.m4a in Resources */,
 				D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */,
 				D1E1DBB21F65994000A7D71D /* Thinking-out-Loud.m4a in Resources */,
 			);
@@ -437,6 +444,7 @@
 				D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */,
 				D1741E581F64F94100A0FE7B /* PlaylistsViewController.swift in Sources */,
 				D1FB09E51F63DE73009EFCAC /* MoodCollectionViewCell.swift in Sources */,
+				D18BD7141F6621880047AFE6 /* UIColor+Extension.swift in Sources */,
 				D18BD7061F65ACF30047AFE6 /* QueueTableViewCell.swift in Sources */,
 				D182D4601F65874A000CFABF /* PlayMusicNavigationController.swift in Sources */,
 				D182D4591F652A4E000CFABF /* PlaylistDetailViewController.swift in Sources */,

@@ -42,4 +42,13 @@ extension Music {
                      jacketImage: #imageLiteral(resourceName: "X"),
                      url: url)
     }
+    
+    static func makeワタリドリ() -> Music {
+        let musicPath = Bundle.main.path(forResource: "ワタリドリ", ofType: "m4a")!
+        let url = URL(fileURLWithPath: musicPath)
+        return Music(title: "ワタリドリ",
+                     singer: "[Alexandros]",
+                     jacketImage: #imageLiteral(resourceName: "ALXD"),
+                     url: url)
+    }
 }
