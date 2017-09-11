@@ -114,9 +114,13 @@ extension PlaylistDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let playMusicNavigationController = PlayMusicNavigationController.instantiate(withStoryboard: "Main")
-        show(playMusicNavigationController, sender: self)
+//        let playMusicNavigationController = PlayMusicNavigationController.instantiate(withStoryboard: "Main")
+//        show(playMusicNavigationController, sender: self)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
         musicManager.set(playlist: playlist!, index: indexPath.item)
+        if let miniPlayerVC = appDelegate?.miniPlayerSubWindow?.rootViewController as? MiniPlayerViewController {
+            miniPlayerVC.showMiniPlayer(animated: true)
+        }
         collectionView.reloadData()
     }
 }

@@ -310,6 +310,31 @@
             </objects>
             <point key="canvasLocation" x="2757.571214392804" y="1533.5999999999999"/>
         </scene>
+        <!--Mini Player View Controller-->
+        <scene sceneID="LdG-ro-Myp">
+            <objects>
+                <viewController storyboardIdentifier="MiniPlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mvq-F1-UfR" customClass="MiniPlayerViewController" customModule="Horizonal_AWA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vpQ-fa-Kcp"/>
+                        <viewControllerLayoutGuide type="bottom" id="I6c-hE-9ah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QXX-7w-Urg">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-9T-qtt">
+                                <rect key="frame" x="47" y="198" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luB-de-4vQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755" y="2237"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AWA-Logo" width="42" height="20"/>

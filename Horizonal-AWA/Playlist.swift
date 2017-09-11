@@ -26,34 +26,35 @@ struct Playlist {
 
 extension Playlist {
     static func make夏の恋の歌楽しい歌() -> Playlist {
-        let SUMMER_SONG = Music.makeSUMMER_SONG()
-        let Like_OHH_AHH = Music.makeLike_OHH_AHH()
+        let CHE_R_RY = Music.makeCHE_R_RY()
+        let TT = Music.makeTT()
         let Thinking_out_Loud = Music.makeThinking_out_Loud()
         let ワタリドリ = Music.makeワタリドリ()
+        let 前前前世 = Music.make前前前世()
         return Playlist(id: 0,
                         title: "夏の恋の歌、楽しい歌",
                         comment: "切なかったり、嬉しかったり、花火見て考えました。とにかくいい曲集めました。",
-                        musicList: [SUMMER_SONG,
-                                    Like_OHH_AHH,
+                        musicList: [CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    前前前世,
+                                    CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    前前前世,
+                                    CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
-                                    Thinking_out_Loud,
-                                    ワタリドリ])
+                                    前前前世,
+                                    Thinking_out_Loud])
     }
     
     static func make2017夏フェスの思い出() -> Playlist {
-        let SUMMER_SONG = Music.makeSUMMER_SONG()
-        let Like_OHH_AHH = Music.makeLike_OHH_AHH()
+        let CHE_R_RY = Music.makeCHE_R_RY()
+        let TT = Music.makeTT()
         let Thinking_out_Loud = Music.makeThinking_out_Loud()
         let ワタリドリ = Music.makeワタリドリ()
         return Playlist(id: 1,
@@ -61,70 +62,71 @@ extension Playlist {
                         comment: "いい歌ばかりです。イチオシの音楽です。",
                         musicList: [Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    TT,
                                     Thinking_out_Loud,
                                     ワタリドリ,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH])
+                                    CHE_R_RY,
+                                    TT])
     }
     
     static func makePOPULAR_SONG() -> Playlist {
-        let SUMMER_SONG = Music.makeSUMMER_SONG()
-        let Like_OHH_AHH = Music.makeLike_OHH_AHH()
+        let CHE_R_RY = Music.makeCHE_R_RY()
+        let TT = Music.makeTT()
         let Thinking_out_Loud = Music.makeThinking_out_Loud()
+        let 前前前世 = Music.make前前前世()
         return Playlist(id: 2,
                         title: "POPULAR SONG",
                         comment: "Taylor Swift / Wiz Khalifa / Maroon 5 / Carly Rae Jepsen / One Direction / ルイス・フォンシ / ダディー",
-                        musicList: [Like_OHH_AHH,
+                        musicList: [前前前世,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    前前前世,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    前前前世,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
+                                    CHE_R_RY,
+                                    前前前世,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH,
-                                    Thinking_out_Loud,
-                                    SUMMER_SONG,
-                                    Like_OHH_AHH])
+                                    CHE_R_RY])
     }
     
     static func makeBeautifulSunset() -> Playlist {
-        let SUMMER_SONG = Music.makeSUMMER_SONG()
-        let Like_OHH_AHH = Music.makeLike_OHH_AHH()
+        let CHE_R_RY = Music.makeCHE_R_RY()
+        let TT = Music.makeTT()
         let Thinking_out_Loud = Music.makeThinking_out_Loud()
         let ワタリドリ = Music.makeワタリドリ()
         return Playlist(id: 3,
                         title: "🌸Beautiful sunset🌸",
                         comment: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸",
                         musicList: [ワタリドリ,
-                                    Like_OHH_AHH,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
+                                    CHE_R_RY,
                                     ワタリドリ,
-                                    Like_OHH_AHH,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
+                                    CHE_R_RY,
                                     ワタリドリ,
-                                    Like_OHH_AHH,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG,
+                                    CHE_R_RY,
                                     ワタリドリ,
-                                    Like_OHH_AHH,
+                                    TT,
                                     Thinking_out_Loud,
-                                    SUMMER_SONG])
+                                    CHE_R_RY])
     }
 }

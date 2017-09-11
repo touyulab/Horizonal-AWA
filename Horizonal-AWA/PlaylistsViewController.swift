@@ -12,15 +12,15 @@ class PlaylistsViewController: UIViewController {
     
     var mood: Mood?
     
-    fileprivate var playlists: [Playlist] = [Playlist.make夏の恋の歌楽しい歌(),
-                                             Playlist.make2017夏フェスの思い出(),
-                                             Playlist.makePOPULAR_SONG(),
+    fileprivate var playlists: [Playlist] = [Playlist.makePOPULAR_SONG(),
                                              Playlist.makeBeautifulSunset(),
                                              Playlist.make夏の恋の歌楽しい歌(),
                                              Playlist.make2017夏フェスの思い出(),
                                              Playlist.makePOPULAR_SONG(),
                                              Playlist.makeBeautifulSunset(),
                                              Playlist.make夏の恋の歌楽しい歌(),
+                                             Playlist.make2017夏フェスの思い出(),
+                                             Playlist.makeBeautifulSunset(),
                                              Playlist.make2017夏フェスの思い出()]
     
     fileprivate var collectionView: UICollectionView! {

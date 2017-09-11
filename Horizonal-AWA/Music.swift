@@ -16,26 +16,35 @@ struct Music {
 }
 
 extension Music {
-    static func makeSUMMER_SONG() -> Music {
-        let musicPath = Bundle.main.path(forResource: "前前前世", ofType: "m4a")!
+    static func make前前前世() -> Music {
+        let musicPath = Bundle.main.path(forResource: "前前前世", ofType: "mp3")!
         let url = URL(fileURLWithPath: musicPath)
-        return Music(title: "SUMMER SONG",
+        return Music(title: "前前前世    ",
+                     singer: "RADWIMPS",
+                     jacketImage: #imageLiteral(resourceName: "前前前世"),
+                     url: url)
+    }
+    
+    static func makeCHE_R_RY() -> Music {
+        let musicPath = Bundle.main.path(forResource: "CHE.R.RY", ofType: "m4a")!
+        let url = URL(fileURLWithPath: musicPath)
+        return Music(title: "CHE.R.RY",
                      singer: "YUI",
                      jacketImage: #imageLiteral(resourceName: "orange-garden-pop"),
                      url: url)
     }
     
-    static func makeLike_OHH_AHH() -> Music {
+    static func makeTT() -> Music {
         let musicPath = Bundle.main.path(forResource: "TT", ofType: "m4a")!
         let url = URL(fileURLWithPath: musicPath)
-        return Music(title: "Like OOH-AHH -Japanese ver.-",
+        return Music(title: "TT -Japanese ver.-",
                      singer: "TWICE",
                      jacketImage: #imageLiteral(resourceName: "#TWICE"),
                      url: url)
     }
     
     static func makeThinking_out_Loud() -> Music {
-        let musicPath = Bundle.main.path(forResource: "Thinking-out-Loud", ofType: "m4a")!
+        let musicPath = Bundle.main.path(forResource: "Thinking-out-Loud", ofType: "mp3")!
         let url = URL(fileURLWithPath: musicPath)
         return Music(title: "Thinking out Loud",
                      singer: "Ed Sheeran",

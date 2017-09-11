@@ -141,9 +141,7 @@ class PlayMusicViewController: UIViewController {
         } else {
             musicManager.play()
             playButton.set(icon: .pause)
-            
-//            let convertedPointX = view.convert(playButton.frame.origin, to: sequenceBar).x
-//            print(convertedPointX)
+
             let index = calculatePlayButtonY(x: playButton.center.x).index
             animatePlayButton(count: index)
         }
@@ -155,19 +153,7 @@ class PlayMusicViewController: UIViewController {
         let newPointX = sender.view!.center.x + point.x
         let convertedPointX = view.convert(CGPoint(x: newPointX, y: 0), to: sequenceBar).x
         // 行き過ぎを防ぐ
-//        if convertedPointX < 0 || convertedPointX > sequenceBar.bounds.width-1 {
-//            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration
-//        } else {
-//            sender.view!.center.x = newPointX
-//            let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
-//            sender.view!.center.y = y
-//            if sender.state == .ended {
-//                musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
-//                animatePlayButton(count: index)
-//            }
-//        }
-        
-        
+
         if convertedPointX < 0 {
             musicManager.audioPlayer.currentTime = 0
             sender.setTranslation(.zero, in: sequenceBar)

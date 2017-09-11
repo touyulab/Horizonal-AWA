@@ -14,6 +14,9 @@
 		D1741E581F64F94100A0FE7B /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E571F64F94100A0FE7B /* PlaylistsViewController.swift */; };
 		D1741E5A1F64FA5500A0FE7B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */; };
 		D1741E5C1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */; };
+		D1761B071F66D93C00749BC4 /* Thinking-out-Loud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1761B061F66D93C00749BC4 /* Thinking-out-Loud.mp3 */; };
+		D1761B091F66DA1400749BC4 /* 前前前世.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1761B081F66DA1400749BC4 /* 前前前世.mp3 */; };
+		D1761B0B1F66DBFB00749BC4 /* CHE.R.RY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D1761B0A1F66DBFB00749BC4 /* CHE.R.RY.m4a */; };
 		D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */; };
 		D182D4561F651BEE000CFABF /* CyberLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4551F651BEE000CFABF /* CyberLine.swift */; };
 		D182D4591F652A4E000CFABF /* PlaylistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D182D4581F652A4E000CFABF /* PlaylistDetailViewController.swift */; };
@@ -27,8 +30,9 @@
 		D18BD7101F65B28C0047AFE6 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */; };
 		D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */; };
 		D18BD7141F6621880047AFE6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */; };
-		D18BD7161F66222C0047AFE6 /* 前前前世.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D18BD7151F66222C0047AFE6 /* 前前前世.m4a */; };
 		D18BD7181F665DB00047AFE6 /* SequenceBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7171F665DB00047AFE6 /* SequenceBar.swift */; };
+		D18BD71A1F66BE760047AFE6 /* MiniPlayerSubWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7191F66BE760047AFE6 /* MiniPlayerSubWindow.swift */; };
+		D18BD71C1F66C0F70047AFE6 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
@@ -38,7 +42,6 @@
 		D1E130451F602728006886A4 /* Horizonal_AWATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130441F602728006886A4 /* Horizonal_AWATests.swift */; };
 		D1E130501F602728006886A4 /* Horizonal_AWAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1304F1F602728006886A4 /* Horizonal_AWAUITests.swift */; };
 		D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130611F611A79006886A4 /* MoodNavigationController.swift */; };
-		D1E1DBB21F65994000A7D71D /* Thinking-out-Loud.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */; };
 		D1FB09E51F63DE73009EFCAC /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FB09E41F63DE73009EFCAC /* MoodCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		D1741E571F64F94100A0FE7B /* PlaylistsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
 		D1741E591F64FA5500A0FE7B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D1741E5B1F6503FD00A0FE7B /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1761B061F66D93C00749BC4 /* Thinking-out-Loud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Thinking-out-Loud.mp3"; sourceTree = "<group>"; };
+		D1761B081F66DA1400749BC4 /* 前前前世.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "前前前世.mp3"; sourceTree = "<group>"; };
+		D1761B0A1F66DBFB00749BC4 /* CHE.R.RY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = CHE.R.RY.m4a; sourceTree = "<group>"; };
 		D182D4521F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D182D4551F651BEE000CFABF /* CyberLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyberLine.swift; sourceTree = "<group>"; };
 		D182D4581F652A4E000CFABF /* PlaylistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDetailViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +86,9 @@
 		D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ワタリドリ.m4a"; sourceTree = "<group>"; };
 		D18BD7131F6621880047AFE6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		D18BD7151F66222C0047AFE6 /* 前前前世.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "前前前世.m4a"; sourceTree = "<group>"; };
 		D18BD7171F665DB00047AFE6 /* SequenceBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceBar.swift; sourceTree = "<group>"; };
+		D18BD7191F66BE760047AFE6 /* MiniPlayerSubWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerSubWindow.swift; sourceTree = "<group>"; };
+		D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +105,6 @@
 		D1E1304F1F602728006886A4 /* Horizonal_AWAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horizonal_AWAUITests.swift; sourceTree = "<group>"; };
 		D1E130511F602728006886A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1E130611F611A79006886A4 /* MoodNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodNavigationController.swift; sourceTree = "<group>"; };
-		D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thinking-out-Loud.m4a"; sourceTree = "<group>"; };
 		D1FB09E41F63DE73009EFCAC /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +247,8 @@
 				D1E1302F1F602728006886A4 /* AppDelegate.swift */,
 				D1AE539B1F63AB36002A52AA /* Utility.swift */,
 				D18BD70F1F65B28C0047AFE6 /* MusicManager.swift */,
+				D18BD7191F66BE760047AFE6 /* MiniPlayerSubWindow.swift */,
+				D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */,
 				D18BD70D1F65AF160047AFE6 /* Extensions */,
 				D11D795A1F6507A900991382 /* Model */,
 				D182D4541F651BDB000CFABF /* View */,
@@ -278,9 +286,10 @@
 			isa = PBXGroup;
 			children = (
 				D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */,
-				D1E1DBB11F65994000A7D71D /* Thinking-out-Loud.m4a */,
 				D18BD7091F65ADE90047AFE6 /* TT.m4a */,
-				D18BD7151F66222C0047AFE6 /* 前前前世.m4a */,
+				D1761B081F66DA1400749BC4 /* 前前前世.mp3 */,
+				D1761B061F66D93C00749BC4 /* Thinking-out-Loud.mp3 */,
+				D1761B0A1F66DBFB00749BC4 /* CHE.R.RY.m4a */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -396,14 +405,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1761B071F66D93C00749BC4 /* Thinking-out-Loud.mp3 in Resources */,
 				D1E1303A1F602728006886A4 /* LaunchScreen.storyboard in Resources */,
+				D1761B091F66DA1400749BC4 /* 前前前世.mp3 in Resources */,
 				D1E130371F602728006886A4 /* Assets.xcassets in Resources */,
 				D1E130351F602728006886A4 /* Main.storyboard in Resources */,
 				D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */,
 				D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */,
-				D18BD7161F66222C0047AFE6 /* 前前前世.m4a in Resources */,
+				D1761B0B1F66DBFB00749BC4 /* CHE.R.RY.m4a in Resources */,
 				D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */,
-				D1E1DBB21F65994000A7D71D /* Thinking-out-Loud.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +462,7 @@
 				D182D4601F65874A000CFABF /* PlayMusicNavigationController.swift in Sources */,
 				D182D4591F652A4E000CFABF /* PlaylistDetailViewController.swift in Sources */,
 				D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */,
+				D18BD71C1F66C0F70047AFE6 /* MiniPlayerViewController.swift in Sources */,
 				D18BD70C1F65AF100047AFE6 /* UITableView+Extension.swift in Sources */,
 				D18BD7101F65B28C0047AFE6 /* MusicManager.swift in Sources */,
 				D182D45B1F653D8F000CFABF /* MusicCollectionViewCell.swift in Sources */,
@@ -460,6 +471,7 @@
 				D13B02301F63D8D000B23707 /* Mood.swift in Sources */,
 				D182D4561F651BEE000CFABF /* CyberLine.swift in Sources */,
 				D11D795C1F6507B600991382 /* Music.swift in Sources */,
+				D18BD71A1F66BE760047AFE6 /* MiniPlayerSubWindow.swift in Sources */,
 				D18BD7181F665DB00047AFE6 /* SequenceBar.swift in Sources */,
 				D15942BE1F63D0C300B494F1 /* MoodCollectionViewLayout.swift in Sources */,
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,

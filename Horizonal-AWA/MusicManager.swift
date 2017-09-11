@@ -21,6 +21,7 @@ class MusicManager {
     var playingPlaylistID: Int?
     
     var playingMusic: Music {
+        // playingIndexが初期値0だから例外発生する可能性あり
         return queue[playingIndex]
     }
     

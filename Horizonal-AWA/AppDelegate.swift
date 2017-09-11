@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var miniPlayerSubWindow: MiniPlayerSubWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        miniPlayerSubWindow = MiniPlayerSubWindow()
+        miniPlayerSubWindow?.rootViewController = MiniPlayerViewController.instantiate(withStoryboard: "Main")
+        miniPlayerSubWindow?.makeKeyAndVisible()
+        miniPlayerSubWindow?.windowLevel = UIWindowLevelAlert
+        
         return true
     }
 

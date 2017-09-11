@@ -81,3 +81,18 @@ extension Array {
         }
     }
 }
+
+extension CGRect {
+    var origin2: CGPoint {
+        return CGPoint(x: origin.x, y: origin.y + size.height)
+    }
+    
+    var origin3: CGPoint {
+        return CGPoint(x: origin.x + size.width, y: origin.y + size.height)
+
+    }
+    
+    var origin4: CGPoint {
+        return CGPoint(x: origin.x + size.width, y: origin.y)
+    }
+}
