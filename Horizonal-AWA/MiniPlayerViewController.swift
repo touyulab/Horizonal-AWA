@@ -16,6 +16,7 @@ class MiniPlayerViewController: UIViewController {
     private var jacketImageView = UIImageView()
     private var titleLabel = UILabel()
     private var playButton = UIButton()
+    private var nextButton = UIButton()
     
     override func loadView() {
         super.loadView()
@@ -38,7 +39,7 @@ class MiniPlayerViewController: UIViewController {
     
     private func makeMiniPlayer() {
         miniPlayer = UIView(frame: CGRect(origin: CGPoint(x: 16, y: view.bounds.height - 68 - 16),
-                                              size: CGSize(width: 256, height: 68)))
+                                              size: CGSize(width: 264, height: 68)))
         miniPlayer.backgroundColor = UIColor.black.withAlphaComponent(0.64)
         miniPlayer.layer.masksToBounds = true
         miniPlayer.layer.cornerRadius = 8
@@ -62,6 +63,13 @@ class MiniPlayerViewController: UIViewController {
         playButton.center.y = titleLabel.center.y
         playButton.addTarget(self, action: #selector(tappedPlayButton), for: .touchUpInside)
         miniPlayer.addSubview(playButton)
+        
+        nextButton = UIButton(frame: CGRect(origin: CGPoint(x: playButton.frame.origin4.x + 16, y: 0),
+                                            size: CGSize(width: 24, height: 24)))
+        nextButton.center.y = titleLabel.center.y
+        nextButton.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
+        nextButton.setImage(#imageLiteral(resourceName: "next2"), for: .normal)
+        miniPlayer.addSubview(nextButton)
     }
     
     func dismissMiniPlayer(animated: Bool) {
@@ -74,12 +82,7 @@ class MiniPlayerViewController: UIViewController {
     
     func showMiniPlayer(animated: Bool) {
         // 更新
-        jacketImageView.image = musicManager.playingMusic.jacketImage
-        jacketImageView.layer.add(CATransition(), forKey: nil)
-        titleLabel.text = musicManager.playingMusic.title
-        titleLabel.layer.add(CATransition(), forKey: nil)
-        let buttonImage = musicManager.audioPlayer.isPlaying ? #imageLiteral(resourceName: "pause2") : #imageLiteral(resourceName: "playing2")
-        playButton.setImage(buttonImage, for: .normal)
+        update()
         
         if animated {
             UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
@@ -98,6 +101,20 @@ class MiniPlayerViewController: UIViewController {
             playButton.setImage(#imageLiteral(resourceName: "pause2"), for: .normal)
             musicManager.play()
         }
+    }
+    
+    func tappedNextButton() {
+        musicManager.next()
+        update()
+    }
+    
+    private func update() {
+        jacketImageView.image = musicManager.playingMusic.jacketImage
+        jacketImageView.layer.add(CATransition(), forKey: nil)
+        titleLabel.text = musicManager.playingMusic.title
+        titleLabel.layer.add(CATransition(), forKey: nil)
+        let buttonImage = musicManager.audioPlayer.isPlaying ? #imageLiteral(resourceName: "pause2") : #imageLiteral(resourceName: "playing2")
+        playButton.setImage(buttonImage, for: .normal)
     }
 }
 
