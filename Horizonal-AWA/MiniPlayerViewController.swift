@@ -50,6 +50,7 @@ class MiniPlayerViewController: UIViewController {
         miniPlayer.layer.masksToBounds = true
         miniPlayer.layer.cornerRadius = 8
         miniPlayer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedJacketImageView)))
+        miniPlayer.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(pannedMiniPlayer(_:))))
         view.addSubview(miniPlayer)
         
         jacketImageView = UIImageView(frame: CGRect(x: 16, y: 16, width: 36, height: 36))
@@ -83,7 +84,15 @@ class MiniPlayerViewController: UIViewController {
     
     func dismissMiniPlayer(animated: Bool) {
         if animated {
+            UIView.animate(withDuration: 0.2, animations: { [weak self] in
+                self?.miniPlayer.frame.origin.x = -self!.miniPlayer.bounds.width
+            })
             
+            UIView.animate(withDuration: 0.2,animations: { [weak self] in
+                self?.miniPlayer.frame.origin.x = -self!.miniPlayer.bounds.width
+                }, completion: { [weak self]  _ in
+                    self?.miniPlayer.alpha = 1
+            })
         } else {
             miniPlayer.frame.origin.x = -miniPlayer.bounds.width
         }
@@ -94,9 +103,13 @@ class MiniPlayerViewController: UIViewController {
         update()
         
         if animated {
-            UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
-                self?.miniPlayer.frame.origin.x = 16
-            })
+            
+            // 隠れている場合のみアニメーションして表示させる
+            if miniPlayer.frame.origin.x == -miniPlayer.bounds.width {
+                UIView.animate(withDuration: 0.2, animations: { [weak self] _ in
+                    self?.miniPlayer.frame.origin.x = 16
+                })
+            }
         } else {
             miniPlayer.frame.origin.x = 16
         }
@@ -133,6 +146,57 @@ class MiniPlayerViewController: UIViewController {
         titleLabel.layer.add(CATransition(), forKey: nil)
         let buttonImage = musicManager.audioPlayer.isPlaying ? #imageLiteral(resourceName: "pause2") : #imageLiteral(resourceName: "playing2")
         playButton.setImage(buttonImage, for: .normal)
+    }
+    
+    func pannedMiniPlayer(_ gesture: UIPanGestureRecognizer) {
+//        if gesture.state == .ended {
+//            // タップ開始地点からの移動量を取得
+//            let position = gesture.translation(in: view)
+//            tapEndPosX = position.x
+//            tapEndPosY = -position.y
+//        }
+        let point = gesture.translation(in: view)
+        let newPointX = gesture.view!.frame.origin.x + point.x
+        let newPointY = gesture.view!.frame.origin.y + point.y
+        
+        if newPointX < -miniPlayer.bounds.width/3 {
+            miniPlayer.alpha = 0.6
+            if gesture.state == .ended {
+                dismissMiniPlayer(animated: true)
+                return
+            }
+        } else {
+            miniPlayer.alpha = 1
+        }
+        
+        gesture.view!.frame.origin.x = newPointX
+        gesture.view!.frame.origin.y = newPointY
+        gesture.setTranslation(.zero, in: view)
+//        let newPointX = sender.view!.center.x + point.x
+//        let convertedPointX = view.convert(CGPoint(x: newPointX, y: 0), to: sequenceBar).x
+//        // 行き過ぎを防ぐ
+//        
+//        if convertedPointX < 0 {
+//            musicManager.audioPlayer.currentTime = 0
+//            sender.setTranslation(.zero, in: sequenceBar)
+//            return
+//        }
+//        
+//        if convertedPointX > sequenceBar.bounds.width-1 {
+//            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration-1
+//            sender.setTranslation(.zero, in: sequenceBar)
+//            return
+//        }
+//        
+//        sender.view!.center.x = newPointX
+//        let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
+//        sender.view!.center.y = y
+//        if sender.state == .ended {
+//            musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
+//            if musicManager.audioPlayer.isPlaying {
+//                animatePlayButton(count: index)
+//            }
+//        }
     }
 }
 

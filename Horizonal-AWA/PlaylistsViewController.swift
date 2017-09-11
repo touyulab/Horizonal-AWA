@@ -69,7 +69,7 @@ class PlaylistsViewController: UIViewController {
     }
     
     private func initCollectionView() {
-        let size = CGSize(width: 600, height: view.bounds.height)
+        let size = CGSize(width: 667, height: view.bounds.height)
         let point = CGPoint(x: view.bounds.width-size.width, y: 0)
         let frame = CGRect(origin: point, size: size)
         collectionView = UICollectionView(frame: frame, collectionViewLayout: PlaylistsCollectionViewLayout())
