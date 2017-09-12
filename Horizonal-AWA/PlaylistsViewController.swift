@@ -31,7 +31,7 @@ class PlaylistsViewController: UIViewController {
         }
     }
     
-    @IBOutlet dynamic fileprivate weak var imageView: UIImageView! {
+    @IBOutlet weak var imageView: UIImageView! {
         didSet {
             imageView.image = mood?.image
             imageView.layer.masksToBounds = true

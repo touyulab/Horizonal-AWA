@@ -203,11 +203,11 @@ class MiniPlayerViewController: UIViewController {
 
 extension MiniPlayerViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return Animation(transitionMode: .push)
+        return AnimationForPlayer(transitionMode: .push)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return Animation(transitionMode: .pop)
+        return AnimationForPlayer(transitionMode: .pop)
     }
 }
 
@@ -216,7 +216,7 @@ enum TransitionMode {
     case pop
 }
 
-class Animation : NSObject, UIViewControllerAnimatedTransitioning {
+class AnimationForPlayer : NSObject, UIViewControllerAnimatedTransitioning {
     
     var transitionMode: TransitionMode
     
