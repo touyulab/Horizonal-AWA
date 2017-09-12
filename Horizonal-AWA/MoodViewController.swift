@@ -134,14 +134,27 @@ class Animation : NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        switch operation {
-        case .push:
+//        switch operation {
+//        case .push:
+//            push(using: transitionContext)
+//        case .pop:
+//            pop(using: transitionContext)
+//        default:
+//            return
+//        }
+//        return
+        
+        if let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? MoodViewController,
+            let toViewCotnroller = transitionContext.viewController(forKey: .to) as? PlaylistsViewController {
             push(using: transitionContext)
-        case .pop:
-            pop(using: transitionContext)
-        default:
-            return
         }
+        
+        if let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? PlaylistsViewController,
+            let toViewCotnroller = transitionContext.viewController(forKey: .to) as? MoodViewController {
+            pop(using: transitionContext)
+        }
+        
+        fade(using: transitionContext)
     }
     
     private func push(using transitionContext: UIViewControllerContextTransitioning) {
@@ -241,6 +254,32 @@ class Animation : NSObject, UIViewControllerAnimatedTransitioning {
         }, completion: { _ in
             copiedImageView.removeFromSuperview()
 //            cell?.moodImageView.alpha = 1
+            let wasCanceled = transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(!wasCanceled)
+        })
+    }
+    
+    func fade(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromViewCotnroller = transitionContext.viewController(forKey: .from)
+        let toViewCotnroller = transitionContext.viewController(forKey: .to)
+        
+        let containerView = transitionContext.containerView
+        
+        let fromView = fromViewCotnroller?.view
+        let toView = toViewCotnroller?.view
+        
+        fromView?.frame = transitionContext.initialFrame(for: fromViewCotnroller!)
+        toView?.frame = transitionContext.finalFrame(for: toViewCotnroller!)
+        
+        fromView?.alpha = 1.0
+        toView?.alpha = 0.0
+        
+        containerView.addSubview(toView!)
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: .curveLinear, animations: { () -> Void in
+            fromView?.alpha = 0.0
+            toView?.alpha = 1.0
+        }, completion: { (BOOL) -> Void in
             let wasCanceled = transitionContext.transitionWasCancelled
             transitionContext.completeTransition(!wasCanceled)
         })
