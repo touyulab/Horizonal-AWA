@@ -24,7 +24,7 @@ class PlaylistsViewController: UIViewController {
                                              Playlist.make夏の恋の歌楽しい歌(),
                                              Playlist.make2017夏フェスの思い出(),
                                              Playlist.makeBeautifulSunset(),
-                                             Playlist.make2017夏フェスの思い出()]
+                                             Playlist.make熱い盛り上がる曲()]
     
     var collectionView: UICollectionView! {
         didSet {

@@ -37,6 +37,7 @@
 		D18BD71A1F66BE760047AFE6 /* MiniPlayerSubWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD7191F66BE760047AFE6 /* MiniPlayerSubWindow.swift */; };
 		D18BD71C1F66C0F70047AFE6 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
+		D1D939A61F6798CE00CB72B5 /* 空色デイズ.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D1D939A51F6798CE00CB72B5 /* 空色デイズ.m4a */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
 		D1E130351F602728006886A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E130331F602728006886A4 /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 		D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
+		D1D939A51F6798CE00CB72B5 /* 空色デイズ.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "空色デイズ.m4a"; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E1302F1F602728006886A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E130311F602728006886A4 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		D1E1DBAE1F6596E600A7D71D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1D939A51F6798CE00CB72B5 /* 空色デイズ.m4a */,
 				D18BD7111F6618600047AFE6 /* ワタリドリ.m4a */,
 				D18BD7091F65ADE90047AFE6 /* TT.m4a */,
 				D1761B081F66DA1400749BC4 /* 前前前世.mp3 */,
@@ -455,6 +458,7 @@
 				D18BD7081F65AD0C0047AFE6 /* QueueTableViewCell.xib in Resources */,
 				D18BD7121F6618600047AFE6 /* ワタリドリ.m4a in Resources */,
 				D1761B0B1F66DBFB00749BC4 /* CHE.R.RY.m4a in Resources */,
+				D1D939A61F6798CE00CB72B5 /* 空色デイズ.m4a in Resources */,
 				D18BD70A1F65ADE90047AFE6 /* TT.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

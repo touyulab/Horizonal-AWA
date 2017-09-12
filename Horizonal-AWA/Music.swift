@@ -60,4 +60,13 @@ extension Music {
                      jacketImage: #imageLiteral(resourceName: "ALXD"),
                      url: url)
     }
+    
+    static func make空色デイズ() -> Music {
+        let musicPath = Bundle.main.path(forResource: "空色デイズ", ofType: "m4a")!
+        let url = URL(fileURLWithPath: musicPath)
+        return Music(title: "空色デイズ",
+                     singer: "中川翔子",
+                     jacketImage: #imageLiteral(resourceName: "空色デイズ"),
+                     url: url)
+    }
 }

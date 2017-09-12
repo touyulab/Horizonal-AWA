@@ -111,7 +111,7 @@ extension Playlist {
         let ワタリドリ = Music.makeワタリドリ()
         return Playlist(id: 3,
                         title: "🌸Beautiful sunset🌸",
-                        comment: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸",
+                        comment: "きれいな曲をまとめてみました。ワタリドリの高音部分は最高ですね",
                         musicList: [ワタリドリ,
                                     TT,
                                     Thinking_out_Loud,
@@ -128,5 +128,33 @@ extension Playlist {
                                     TT,
                                     Thinking_out_Loud,
                                     CHE_R_RY])
+    }
+    
+    static func make熱い盛り上がる曲() -> Playlist {
+        let CHE_R_RY = Music.makeCHE_R_RY()
+        let TT = Music.makeTT()
+        let Thinking_out_Loud = Music.makeThinking_out_Loud()
+        let ワタリドリ = Music.makeワタリドリ()
+        let 前前前世 = Music.make前前前世()
+        let 空色デイズ = Music.make空色デイズ()
+        return Playlist(id: 4,
+                        title: "熱い盛り上がる曲",
+                        comment: "聞くとテンションがあがる曲リストです! 天元突破グレンラガンの空色デイズはアニソントップクラス!",
+                        musicList: [空色デイズ,
+                                     前前前世,
+                                     Thinking_out_Loud,
+                                     CHE_R_RY,
+                                     ワタリドリ,
+                                     TT,
+                                     空色デイズ,
+                                     前前前世,
+                                     Thinking_out_Loud,
+                                     CHE_R_RY,
+                                     ワタリドリ,
+                                     TT,
+                                     空色デイズ,
+                                     前前前世,
+                                     Thinking_out_Loud,
+                                     ワタリドリ])
     }
 }
