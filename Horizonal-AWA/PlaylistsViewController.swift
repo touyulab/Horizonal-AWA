@@ -10,6 +10,9 @@ import UIKit
 
 class PlaylistsViewController: UIViewController {
     
+    // アニメーションで使用
+    var selectedPlaylistID: Int?
+    
     var mood: Mood?
     
     fileprivate var playlists: [Playlist] = [Playlist.makePOPULAR_SONG(),
@@ -23,7 +26,7 @@ class PlaylistsViewController: UIViewController {
                                              Playlist.makeBeautifulSunset(),
                                              Playlist.make2017夏フェスの思い出()]
     
-    fileprivate var collectionView: UICollectionView! {
+    var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
@@ -119,6 +122,7 @@ extension PlaylistsViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPlaylistID = playlists[indexPath.item].id
         print(indexPath.item)
         let playlistDetailVC = PlaylistDetailViewController.instantiate(withStoryboard: "Main")
         playlistDetailVC.playlist = playlists[indexPath.item]

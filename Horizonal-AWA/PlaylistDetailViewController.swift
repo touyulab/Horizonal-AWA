@@ -37,6 +37,7 @@ class PlaylistDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
             imageView.image = playlist?.musicList.first?.jacketImage
+            imageView.contentMode = .scaleAspectFill
         }
     }
     

@@ -144,14 +144,19 @@ class Animation : NSObject, UIViewControllerAnimatedTransitioning {
 //        }
 //        return
         
-        if let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? MoodViewController,
-            let toViewCotnroller = transitionContext.viewController(forKey: .to) as? PlaylistsViewController {
+        if let _ = transitionContext.viewController(forKey: .from) as? MoodViewController,
+            let _ = transitionContext.viewController(forKey: .to) as? PlaylistsViewController {
             push(using: transitionContext)
         }
         
-        if let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? PlaylistsViewController,
-            let toViewCotnroller = transitionContext.viewController(forKey: .to) as? MoodViewController {
+        if let _ = transitionContext.viewController(forKey: .from) as? PlaylistsViewController,
+            let _ = transitionContext.viewController(forKey: .to) as? MoodViewController {
             pop(using: transitionContext)
+        }
+        
+        if let _ = transitionContext.viewController(forKey: .from) as? PlaylistsViewController,
+            let _ = transitionContext.viewController(forKey: .to) as? PlaylistDetailViewController {
+            push2(using: transitionContext)
         }
         
         fade(using: transitionContext)
@@ -254,6 +259,49 @@ class Animation : NSObject, UIViewControllerAnimatedTransitioning {
         }, completion: { _ in
             copiedImageView.removeFromSuperview()
 //            cell?.moodImageView.alpha = 1
+            let wasCanceled = transitionContext.transitionWasCancelled
+            transitionContext.completeTransition(!wasCanceled)
+        })
+    }
+    
+    func push2(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromViewCotnroller = transitionContext.viewController(forKey: .from) as? PlaylistsViewController
+        let toViewCotnroller = transitionContext.viewController(forKey: .to) as? PlaylistDetailViewController
+        
+        let containerView = transitionContext.containerView
+        
+        let fromView = fromViewCotnroller?.view
+        let toView = toViewCotnroller?.view
+        
+        let cell = fromViewCotnroller!.collectionView.visibleCells
+            .flatMap { $0 as? PlaylistsCollectionViewCell }
+            .filter { $0.playlist.id == fromViewCotnroller!.selectedPlaylistID }
+            .first
+        
+        let a = cell!.contentView.convert(cell!.bigJacketImageView.frame.origin, to: fromViewCotnroller!.collectionView)
+        let b = fromViewCotnroller!.collectionView.convert(a, to: containerView)
+        
+        let copiedImageView = UIImageView(frame: CGRect(origin: b, size: cell!.bigJacketImageView.bounds.size))
+        copiedImageView.image = cell?.bigJacketImageView.image
+        copiedImageView.contentMode = cell!.bigJacketImageView.contentMode
+        containerView.addSubview(copiedImageView)
+        
+        fromView?.frame = transitionContext.initialFrame(for: fromViewCotnroller!)
+        toView?.frame = transitionContext.finalFrame(for: toViewCotnroller!)
+        
+        fromView?.alpha = 1.0
+        toView?.alpha = 0.0
+        
+        containerView.addSubview(toView!)
+        
+        UIView.animate(withDuration: 0.4, animations: { _ in
+            fromView?.alpha = 0.0
+            toView?.alpha = 1.0
+//            copiedImageView.frame = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.width))
+            copiedImageView.frame.size = CGSize(width: UIScreen.main.bounds.width, height:  UIScreen.main.bounds.width)
+            copiedImageView.center = containerView.center
+        }, completion: { _ in
+            copiedImageView.removeFromSuperview()
             let wasCanceled = transitionContext.transitionWasCancelled
             transitionContext.completeTransition(!wasCanceled)
         })
