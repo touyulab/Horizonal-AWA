@@ -111,6 +111,24 @@ class PlayMusicViewController: UIViewController {
         
         musicManager.set(delegate: self)
 //        musicManager.play()
+        
+        // 初期化
+//        let index = Int(musicManager.audioPlayer.currentTime/musicManager.audioPlayer.duration) * 100
+//        if musicManager.audioPlayer.isPlaying {
+//            animatePlayButton(count: index)
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let index = Int(musicManager.audioPlayer.currentTime/musicManager.audioPlayer.duration * TimeInterval(100))
+        makeActiveBar(count: index)
+        let point = sequenceBar.points[index]
+        playButton.center = view.convert(point, from: sequenceBar)
+        if musicManager.audioPlayer.isPlaying {
+            animatePlayButton(count: index)
+        }
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -184,6 +202,7 @@ class PlayMusicViewController: UIViewController {
         
         sender.view!.center.x = newPointX
         let (index, y) = calculatePlayButtonY(x: sender.view!.center.x)
+        makeActiveBar(count: index)
         sender.view!.center.y = y
         if sender.state == .ended {
             musicManager.audioPlayer.currentTime = musicManager.audioPlayer.duration * TimeInterval(index) / TimeInterval(100)
@@ -192,6 +211,18 @@ class PlayMusicViewController: UIViewController {
             }
         }
         sender.setTranslation(.zero, in: sequenceBar)
+    }
+    
+    private var activeBar: ActiveBar?
+    
+    private func makeActiveBar(count: Int) {
+        activeBar?.removeFromSuperview()
+        let points = Array(sequenceBar.points.prefix(count))
+        activeBar = ActiveBar(frame: sequenceBar.frame, points: points)
+        activeBar?.isUserInteractionEnabled = false
+        view.addSubview(activeBar!)
+        view.bringSubview(toFront: playButton)
+        
     }
     
     private func calculatePlayButtonY(x: CGFloat) -> (index: Int, y: CGFloat) {
@@ -214,6 +245,8 @@ class PlayMusicViewController: UIViewController {
         if count > 99 {
             return
         }
+        
+        makeActiveBar(count: count)
         
         UIView.animate(
             withDuration: musicManager.audioPlayer.duration/100,

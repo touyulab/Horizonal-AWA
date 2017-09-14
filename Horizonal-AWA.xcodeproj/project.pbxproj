@@ -38,6 +38,7 @@
 		D18BD71C1F66C0F70047AFE6 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BD71B1F66C0F70047AFE6 /* MiniPlayerViewController.swift */; };
 		D1AE539C1F63AB36002A52AA /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AE539B1F63AB36002A52AA /* Utility.swift */; };
 		D1D939A61F6798CE00CB72B5 /* 空色デイズ.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D1D939A51F6798CE00CB72B5 /* 空色デイズ.m4a */; };
+		D1D939A81F679CDA00CB72B5 /* ActiveBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D939A71F679CDA00CB72B5 /* ActiveBar.swift */; };
 		D1E130301F602728006886A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1302F1F602728006886A4 /* AppDelegate.swift */; };
 		D1E130321F602728006886A4 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E130311F602728006886A4 /* MoodViewController.swift */; };
 		D1E130351F602728006886A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E130331F602728006886A4 /* Main.storyboard */; };
@@ -104,6 +105,7 @@
 		D1AE539B1F63AB36002A52AA /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		D1C5FEE51F629362001D4361 /* Gemini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gemini.framework; path = Carthage/Build/iOS/Gemini.framework; sourceTree = "<group>"; };
 		D1D939A51F6798CE00CB72B5 /* 空色デイズ.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "空色デイズ.m4a"; sourceTree = "<group>"; };
+		D1D939A71F679CDA00CB72B5 /* ActiveBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBar.swift; sourceTree = "<group>"; };
 		D1E1302C1F602728006886A4 /* Horizonal-AWA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Horizonal-AWA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E1302F1F602728006886A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E130311F602728006886A4 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				D182D4551F651BEE000CFABF /* CyberLine.swift */,
 				D18BD7171F665DB00047AFE6 /* SequenceBar.swift */,
+				D1D939A71F679CDA00CB72B5 /* ActiveBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -413,14 +416,13 @@
 					};
 					D1E1303F1F602728006886A4 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = V8AZ23YEL4;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = D1E1302B1F602728006886A4;
 					};
 					D1E1304A1F602728006886A4 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = V8AZ23YEL4;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 4Y3T6EGT59;
+						ProvisioningStyle = Manual;
 						TestTargetID = D1E1302B1F602728006886A4;
 					};
 				};
@@ -671,6 +673,7 @@
 				D1E130301F602728006886A4 /* AppDelegate.swift in Sources */,
 				D1E130621F611A79006886A4 /* MoodNavigationController.swift in Sources */,
 				D182D4531F6509A5000CFABF /* PlaylistsCollectionViewLayout.swift in Sources */,
+				D1D939A81F679CDA00CB72B5 /* ActiveBar.swift in Sources */,
 				D182D45E1F6584CC000CFABF /* PlayMusicViewController.swift in Sources */,
 				D11D795E1F6507E400991382 /* Playlist.swift in Sources */,
 			);
@@ -827,15 +830,19 @@
 			baseConfigurationReference = 47FB633BE88134311980F83A /* Pods-Horizonal-AWA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V8AZ23YEL4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Horizonal-AWA/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -845,15 +852,18 @@
 			baseConfigurationReference = 265CD335675160B88707CC26 /* Pods-Horizonal-AWA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V8AZ23YEL4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Horizonal-AWA/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -864,7 +874,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = V8AZ23YEL4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Horizonal-AWATests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWATests";
@@ -880,7 +890,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = V8AZ23YEL4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Horizonal-AWATests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWATests";
@@ -895,7 +905,7 @@
 			baseConfigurationReference = F0EF02FCB6162CDDFE309720 /* Pods-Horizonal-AWAUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = V8AZ23YEL4;
+				DEVELOPMENT_TEAM = 4Y3T6EGT59;
 				INFOPLIST_FILE = "Horizonal-AWAUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWAUITests";
@@ -910,7 +920,7 @@
 			baseConfigurationReference = 2E49F7900FB94FD3BC8CC15B /* Pods-Horizonal-AWAUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = V8AZ23YEL4;
+				DEVELOPMENT_TEAM = 4Y3T6EGT59;
 				INFOPLIST_FILE = "Horizonal-AWAUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YutoAkiba.Horizonal-AWAUITests";

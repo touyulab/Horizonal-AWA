@@ -9,7 +9,7 @@
 import Foundation
 
 struct Playlist {
-    let id: Int
+    var id: Int
     let title: String
     let comment: String
     let musicList: [Music]

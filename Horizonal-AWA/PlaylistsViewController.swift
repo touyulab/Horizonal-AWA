@@ -51,6 +51,10 @@ class PlaylistsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for (i, _) in playlists.enumerated() {
+            playlists[i].id = i
+        }
+        
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         
